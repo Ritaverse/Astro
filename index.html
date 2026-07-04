@@ -81,8 +81,8 @@
       </div>
     </div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
-      <span class="pill">Data collected 2026-07-03</span>
-      <span class="pill">Sample: 15 featured games</span>
+      <span class="pill">Auto-refreshed every 2 days</span>
+      <span class="pill"><span id="gcount2">…</span> games in feed</span>
       <span class="pill" id="src-pill">Sources: astrocade.com · Fortune · Discord</span>
     </div>
   </header>
@@ -105,8 +105,8 @@
   <!-- Row 1: top games + genre donut -->
   <section class="grid">
     <div class="card">
-      <h3>Top Featured Games by Lifetime Plays</h3>
-      <div class="cap">Homepage gallery sample (Players' Choice · Trending · Recommended)</div>
+      <h3>Top 15 Games by Lifetime Plays</h3>
+      <div class="cap">Live homepage feed · measured from the site's embedded data</div>
       <div class="chart-box"><canvas id="chartGames"></canvas></div>
     </div>
     <div class="card">
@@ -124,23 +124,24 @@
       <div class="chart-box"><canvas id="chartCreators"></canvas></div>
     </div>
     <div class="card">
-      <h3>Genre Footprint</h3>
-      <div class="cap">Titles vs. avg plays per title, by genre</div>
+      <h3>Engagement — Plays vs. Likes</h3>
+      <div class="cap">Top games: play volume (bars) against likes (line)</div>
       <div class="chart-sm"><canvas id="chartGenreCount"></canvas></div>
     </div>
   </section>
 
   <!-- Row 3: table -->
   <section class="card" style="margin-bottom:18px">
-    <h3>Featured Games — Detail</h3>
-    <div class="cap">Click a column header to sort. Bars scale to the max play count in the sample.</div>
+    <h3>Games — Detail (<span id="gcount">…</span> live from feed)</h3>
+    <div class="cap">Click a column header to sort. Bars scale to the max play count in the sample. Refreshed automatically every 2 days.</div>
     <table id="gamesTable">
       <thead>
         <tr>
           <th data-k="title">Game</th>
           <th data-k="creator">Creator</th>
           <th data-k="genre">Genre</th>
-          <th data-k="section">Feed</th>
+          <th data-k="likes" class="n">Likes</th>
+          <th data-k="remixes" class="n">Remixes</th>
           <th data-k="plays" class="n">Plays ▾</th>
         </tr>
       </thead>
@@ -170,15 +171,15 @@
       <h3>Methodology &amp; Data Provenance</h3>
       <div class="cap">Read before citing — mix of measured and estimated fields</div>
       <p class="note">
-        <b>Measured:</b> per-game lifetime <b>plays/visits</b> scraped from the astrocade.com gallery
-        cards (15 featured titles). Platform KPIs (MAU, monthly plays, game count, funding, Discord size)
-        sourced from Astrocade, Fortune, and GlobeNewswire.<br><br>
-        <b>Estimated / assigned:</b> <b>Genre</b> is analyst-classified from each game's title and
-        description — Astrocade exposes no public genre field.<br><br>
-        <b>Not available:</b> per-game <b>likes</b> and <b>shares</b> are rendered client-side by the
-        site's SPA and are <b>not present in fetchable HTML</b>. They are intentionally omitted rather
-        than fabricated. To capture them, a logged-in browser-automation pass over each game page would
-        be required.
+        <b>Measured (auto, every 2 days):</b> per-game <b>plays, likes, comments &amp; remixes</b> are
+        parsed directly from the astrocade.com homepage's embedded data payload by
+        <code>scripts/scrape.mjs</code> and written to <code>data/games.json</code>. This dashboard reads
+        that file at load time, so it stays in sync with the live feed.<br><br>
+        <b>Heuristic:</b> <b>Genre</b> is auto-assigned from title keywords (Astrocade publishes no genre
+        field). New titles may show <b>Unclassified</b> until the monthly analyst pass refines them.<br><br>
+        <b>Note:</b> the homepage feed rotates, so the specific games sampled change between refreshes.
+        Platform KPIs (MAU, funding, Discord size) come from Astrocade, Fortune &amp; GlobeNewswire and
+        are updated on the monthly pass.
       </p>
     </div>
   </section>
@@ -195,23 +196,11 @@
 </div>
 
 <script>
-// ---- Dataset (mirrors data/games.json) ----
-const GAMES = [
-  { title:"ASMR Sparkle & Shine", creator:"falgunichakraborty", genre:"Casual", plays:2900000, section:"Players' Choice" },
-  { title:"Royal Showdown", creator:"devinthegoat", genre:"Strategy", plays:1500000, section:"Players' Choice" },
-  { title:"Gun Merge 3D: Zombie Apocalypse", creator:"archeologist", genre:"Merge", plays:605000, section:"Players' Choice" },
-  { title:"FORMULA CRASH RACER", creator:"MAT_GAMER", genre:"Racing", plays:402000, section:"Players' Choice" },
-  { title:"Mini Tanks 2", creator:"KibblezGamez", genre:"Action", plays:731000, section:"Players' Choice" },
-  { title:"Era.io", creator:"archeologist", genre:"IO", plays:534000, section:"Trending" },
-  { title:"The Journey Begins", creator:"DeathBlast", genre:"Adventure", plays:279000, section:"Trending" },
-  { title:"BLOCKY SNIPER HUNTER", creator:"Leevai", genre:"Shooter", plays:1000000, section:"Trending" },
-  { title:"Build It", creator:"Alina", genre:"Simulation", plays:94900, section:"Trending" },
-  { title:"Pee Panic: Draw To Relief", creator:"AshPlayz", genre:"Puzzle", plays:45300, section:"Trending" },
-  { title:"Speed Per Step", creator:"archeologist", genre:"Hyper-casual", plays:1000000, section:"Recommended" },
-  { title:"Epic Minecraft", creator:"EL_HUESO", genre:"Sandbox", plays:225000, section:"Recommended" },
-  { title:"Naruto: Merge Heroes", creator:"Leevai", genre:"Merge", plays:511000, section:"Recommended" },
-  { title:"Brilliant Move!!", creator:"standardcombo", genre:"Puzzle", plays:820000, section:"Recommended" },
-  { title:"Divine Eight", creator:"houerd", genre:"Puzzle", plays:1000, section:"Recommended" }
+// Fallback used only if data/games.json can't be fetched (e.g. opened via file://).
+const FALLBACK = [
+  { title:"Speed Per Step", creator:"archeologist", genre:"Hyper-casual", plays:1019693, likes:19766, remixes:0 },
+  { title:"Era.io", creator:"archeologist", genre:"IO", plays:538984, likes:9545, remixes:1 },
+  { title:"Mini Tanks 2", creator:"KibblezGamez", genre:"Action", plays:733314, likes:14337, remixes:0 }
 ];
 
 const PALETTE = ["#6c5ce7","#00d2ff","#22d3a0","#ffb020","#ff6ba9","#a78bfa","#38bdf8","#f472b6","#34d399","#fbbf24","#818cf8","#2dd4bf"];
@@ -220,89 +209,109 @@ Chart.defaults.color = "#8a95b5";
 Chart.defaults.font.family = "-apple-system,Segoe UI,Roboto,sans-serif";
 Chart.defaults.borderColor = "#1e2740";
 
-// ---- Aggregations ----
-const byGenre = {};
-GAMES.forEach(g=>{ (byGenre[g.genre] ||= {plays:0,count:0}); byGenre[g.genre].plays+=g.plays; byGenre[g.genre].count++; });
-const genreRows = Object.entries(byGenre).map(([k,v])=>({genre:k,...v})).sort((a,b)=>b.plays-a.plays);
-
-const byCreator = {};
-GAMES.forEach(g=>{ byCreator[g.creator]=(byCreator[g.creator]||0)+g.plays; });
-const creatorRows = Object.entries(byCreator).map(([k,v])=>({creator:k,plays:v})).sort((a,b)=>b.plays-a.plays).slice(0,8);
-
-// ---- Chart 1: top games ----
-const topGames = [...GAMES].sort((a,b)=>b.plays-a.plays);
-new Chart(document.getElementById("chartGames"),{
-  type:"bar",
-  data:{ labels: topGames.map(g=>g.title),
-    datasets:[{ data: topGames.map(g=>g.plays), backgroundColor:"#6c5ce7", borderRadius:6, borderSkipped:false }] },
-  options:{ indexAxis:"y", maintainAspectRatio:false,
-    plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>" "+fmt(c.raw)+" plays"}} },
-    scales:{ x:{ticks:{callback:fmt}, grid:{color:"#161d33"}}, y:{ticks:{font:{size:11}}, grid:{display:false}} } }
-});
-
-// ---- Chart 2: genre donut ----
-new Chart(document.getElementById("chartGenre"),{
-  type:"doughnut",
-  data:{ labels: genreRows.map(g=>g.genre),
-    datasets:[{ data: genreRows.map(g=>g.plays), backgroundColor:PALETTE, borderColor:"#0f1524", borderWidth:2 }] },
-  options:{ maintainAspectRatio:false, cutout:"58%",
-    plugins:{ legend:{position:"right", labels:{boxWidth:11,font:{size:11}}},
-      tooltip:{callbacks:{label:c=>" "+c.label+": "+fmt(c.raw)}} } }
-});
-
-// ---- Chart 3: creators ----
-new Chart(document.getElementById("chartCreators"),{
-  type:"bar",
-  data:{ labels: creatorRows.map(c=>c.creator),
-    datasets:[{ data: creatorRows.map(c=>c.plays), backgroundColor:"#00d2ff", borderRadius:6, borderSkipped:false }] },
-  options:{ indexAxis:"y", maintainAspectRatio:false,
-    plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>" "+fmt(c.raw)+" plays"}} },
-    scales:{ x:{ticks:{callback:fmt}, grid:{color:"#161d33"}}, y:{grid:{display:false}} } }
-});
-
-// ---- Chart 4: genre count vs avg plays ----
-new Chart(document.getElementById("chartGenreCount"),{
-  type:"bar",
-  data:{ labels: genreRows.map(g=>g.genre),
-    datasets:[
-      { label:"# Titles", data: genreRows.map(g=>g.count), backgroundColor:"#ffb020", borderRadius:5, yAxisID:"y" },
-      { label:"Avg plays/title", type:"line", data: genreRows.map(g=>Math.round(g.plays/g.count)),
-        borderColor:"#ff6ba9", backgroundColor:"#ff6ba9", tension:.35, yAxisID:"y1", pointRadius:3 }
-    ] },
-  options:{ maintainAspectRatio:false,
-    plugins:{ legend:{labels:{boxWidth:11,font:{size:11}}}, tooltip:{callbacks:{label:c=>" "+c.dataset.label+": "+fmt(c.raw)}} },
-    scales:{ y:{position:"left",grid:{color:"#161d33"},title:{display:true,text:"titles"}},
-      y1:{position:"right",grid:{display:false},ticks:{callback:fmt},title:{display:true,text:"avg plays"}},
-      x:{ticks:{font:{size:10}},grid:{display:false}} } }
-});
-
-// ---- Sortable table ----
-const tbody = document.querySelector("#gamesTable tbody");
-const maxPlays = Math.max(...GAMES.map(g=>g.plays));
-let sortK="plays", sortAsc=false;
-function render(){
-  const rows=[...GAMES].sort((a,b)=>{
-    let r = typeof a[sortK]==="number" ? a[sortK]-b[sortK] : String(a[sortK]).localeCompare(String(b[sortK]));
-    return sortAsc? r : -r;
-  });
-  tbody.innerHTML = rows.map(g=>`
-    <tr>
-      <td>${g.title}</td>
-      <td style="color:var(--muted)">${g.creator}</td>
-      <td><span class="tag">${g.genre}</span></td>
-      <td style="color:var(--muted)">${g.section}</td>
-      <td class="n bar-cell"><div class="fill" style="width:${(g.plays/maxPlays*100).toFixed(1)}%"></div><span>${g.plays.toLocaleString()}</span></td>
-    </tr>`).join("");
-  document.querySelectorAll("#gamesTable th").forEach(th=>{
-    th.textContent = th.textContent.replace(/ [▾▴]$/,"");
-    if(th.dataset.k===sortK) th.textContent += sortAsc?" ▴":" ▾";
-  });
+let GAMES = [], COLLECTED = "";
+async function loadData(){
+  try{
+    const r = await fetch("data/games.json", {cache:"no-store"});
+    if(!r.ok) throw new Error(r.status);
+    const j = await r.json();
+    GAMES = j.games; COLLECTED = j.collected || "";
+  }catch(e){ GAMES = FALLBACK; COLLECTED = "fallback"; }
 }
-document.querySelectorAll("#gamesTable th").forEach(th=>{
-  th.addEventListener("click",()=>{ const k=th.dataset.k;
-    if(k===sortK) sortAsc=!sortAsc; else {sortK=k; sortAsc=false;} render(); });
-});
-render();
+
+function build(){
+  // ---- Aggregations ----
+  const byGenre = {};
+  GAMES.forEach(g=>{ (byGenre[g.genre] ||= {plays:0,count:0}); byGenre[g.genre].plays+=g.plays; byGenre[g.genre].count++; });
+  const genreRows = Object.entries(byGenre).map(([k,v])=>({genre:k,...v})).sort((a,b)=>b.plays-a.plays);
+
+  const byCreator = {};
+  GAMES.forEach(g=>{ byCreator[g.creator]=(byCreator[g.creator]||0)+g.plays; });
+  const creatorRows = Object.entries(byCreator).map(([k,v])=>({creator:k,plays:v})).sort((a,b)=>b.plays-a.plays).slice(0,10);
+
+  document.getElementById("gcount").textContent = GAMES.length;
+  const gc2=document.getElementById("gcount2"); if(gc2) gc2.textContent = GAMES.length;
+  if(COLLECTED){ const p=document.getElementById("src-pill"); if(p) p.textContent = "Live feed · refreshed "+COLLECTED; }
+
+  // ---- Chart 1: top games by plays ----
+  const topGames = [...GAMES].sort((a,b)=>b.plays-a.plays).slice(0,15);
+  new Chart(document.getElementById("chartGames"),{
+    type:"bar",
+    data:{ labels: topGames.map(g=>g.title),
+      datasets:[{ data: topGames.map(g=>g.plays), backgroundColor:"#6c5ce7", borderRadius:6, borderSkipped:false }] },
+    options:{ indexAxis:"y", maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>" "+fmt(c.raw)+" plays"}} },
+      scales:{ x:{ticks:{callback:fmt}, grid:{color:"#161d33"}}, y:{ticks:{font:{size:11}}, grid:{display:false}} } }
+  });
+
+  // ---- Chart 2: genre donut by plays ----
+  new Chart(document.getElementById("chartGenre"),{
+    type:"doughnut",
+    data:{ labels: genreRows.map(g=>g.genre),
+      datasets:[{ data: genreRows.map(g=>g.plays), backgroundColor:PALETTE, borderColor:"#0f1524", borderWidth:2 }] },
+    options:{ maintainAspectRatio:false, cutout:"58%",
+      plugins:{ legend:{position:"right", labels:{boxWidth:11,font:{size:11}}},
+        tooltip:{callbacks:{label:c=>" "+c.label+": "+fmt(c.raw)}} } }
+  });
+
+  // ---- Chart 3: creators by plays ----
+  new Chart(document.getElementById("chartCreators"),{
+    type:"bar",
+    data:{ labels: creatorRows.map(c=>c.creator),
+      datasets:[{ data: creatorRows.map(c=>c.plays), backgroundColor:"#00d2ff", borderRadius:6, borderSkipped:false }] },
+    options:{ indexAxis:"y", maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>" "+fmt(c.raw)+" plays"}} },
+      scales:{ x:{ticks:{callback:fmt}, grid:{color:"#161d33"}}, y:{grid:{display:false}} } }
+  });
+
+  // ---- Chart 4: engagement — plays vs likes per top game ----
+  const eng = [...GAMES].sort((a,b)=>b.plays-a.plays).slice(0,12);
+  new Chart(document.getElementById("chartGenreCount"),{
+    type:"bar",
+    data:{ labels: eng.map(g=>g.title),
+      datasets:[
+        { label:"Plays", data: eng.map(g=>g.plays), backgroundColor:"#6c5ce7", borderRadius:5, yAxisID:"y" },
+        { label:"Likes", type:"line", data: eng.map(g=>g.likes),
+          borderColor:"#ff6ba9", backgroundColor:"#ff6ba9", tension:.35, yAxisID:"y1", pointRadius:3 }
+      ] },
+    options:{ maintainAspectRatio:false,
+      plugins:{ legend:{labels:{boxWidth:11,font:{size:11}}}, tooltip:{callbacks:{label:c=>" "+c.dataset.label+": "+fmt(c.raw)}} },
+      scales:{ y:{position:"left",grid:{color:"#161d33"},ticks:{callback:fmt},title:{display:true,text:"plays"}},
+        y1:{position:"right",grid:{display:false},ticks:{callback:fmt},title:{display:true,text:"likes"}},
+        x:{ticks:{display:false},grid:{display:false}} } }
+  });
+
+  // ---- Sortable table ----
+  const tbody = document.querySelector("#gamesTable tbody");
+  const maxPlays = Math.max(...GAMES.map(g=>g.plays));
+  let sortK="plays", sortAsc=false;
+  function render(){
+    const rows=[...GAMES].sort((a,b)=>{
+      let r = typeof a[sortK]==="number" ? (a[sortK]||0)-(b[sortK]||0) : String(a[sortK]).localeCompare(String(b[sortK]));
+      return sortAsc? r : -r;
+    });
+    tbody.innerHTML = rows.map(g=>`
+      <tr>
+        <td>${g.title}</td>
+        <td style="color:var(--muted)">${g.creator}</td>
+        <td><span class="tag">${g.genre}</span></td>
+        <td class="n">${(g.likes||0).toLocaleString()}</td>
+        <td class="n" style="color:var(--muted)">${(g.remixes||0).toLocaleString()}</td>
+        <td class="n bar-cell"><div class="fill" style="width:${(g.plays/maxPlays*100).toFixed(1)}%"></div><span>${g.plays.toLocaleString()}</span></td>
+      </tr>`).join("");
+    document.querySelectorAll("#gamesTable th").forEach(th=>{
+      th.textContent = th.textContent.replace(/ [▾▴]$/,"");
+      if(th.dataset.k===sortK) th.textContent += sortAsc?" ▴":" ▾";
+    });
+  }
+  document.querySelectorAll("#gamesTable th").forEach(th=>{
+    th.addEventListener("click",()=>{ const k=th.dataset.k;
+      if(k===sortK) sortAsc=!sortAsc; else {sortK=k; sortAsc=false;} render(); });
+  });
+  render();
+}
+
+loadData().then(build);
 </script>
 </body>
 </html>

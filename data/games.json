@@ -1,22 +1,608 @@
 {
-  "collected": "2026-07-03",
-  "source": "astrocade.com homepage gallery (Players' Choice / Trending / Recommended sections)",
-  "notes": "plays = lifetime play/visit count shown on gallery cards. genre is analyst-assigned from title + description (Astrocade does not expose a genre field publicly). likes & shares are NOT publicly exposed in fetchable HTML and are omitted rather than fabricated.",
+  "collected": "2026-07-04",
+  "source": "astrocade.com homepage Next.js payload (self.__next_f)",
+  "count": 60,
+  "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
-    { "title": "ASMR Sparkle & Shine", "creator": "falgunichakraborty", "genre": "Casual", "plays": 2900000, "section": "Players' Choice" },
-    { "title": "Royal Showdown", "creator": "devinthegoat", "genre": "Strategy", "plays": 1500000, "section": "Players' Choice" },
-    { "title": "Gun Merge 3D: Zombie Apocalypse", "creator": "archeologist", "genre": "Merge", "plays": 605000, "section": "Players' Choice" },
-    { "title": "FORMULA CRASH RACER", "creator": "MAT_GAMER", "genre": "Racing", "plays": 402000, "section": "Players' Choice" },
-    { "title": "Mini Tanks 2", "creator": "KibblezGamez", "genre": "Action", "plays": 731000, "section": "Players' Choice" },
-    { "title": "Era.io", "creator": "archeologist", "genre": "IO", "plays": 534000, "section": "Trending" },
-    { "title": "The Journey Begins", "creator": "DeathBlast", "genre": "Adventure", "plays": 279000, "section": "Trending" },
-    { "title": "BLOCKY SNIPER HUNTER", "creator": "Leevai", "genre": "Shooter", "plays": 1000000, "section": "Trending" },
-    { "title": "Build It", "creator": "Alina", "genre": "Simulation", "plays": 94900, "section": "Trending" },
-    { "title": "Pee Panic: Draw To Relief", "creator": "AshPlayz", "genre": "Puzzle", "plays": 45300, "section": "Trending" },
-    { "title": "Speed Per Step", "creator": "archeologist", "genre": "Hyper-casual", "plays": 1000000, "section": "Recommended" },
-    { "title": "Epic Minecraft", "creator": "EL_HUESO", "genre": "Sandbox", "plays": 225000, "section": "Recommended" },
-    { "title": "Naruto: Merge Heroes", "creator": "Leevai", "genre": "Merge", "plays": 511000, "section": "Recommended" },
-    { "title": "Brilliant Move!!", "creator": "standardcombo", "genre": "Puzzle", "plays": 820000, "section": "Recommended" },
-    { "title": "Divine Eight", "creator": "houerd", "genre": "Puzzle", "plays": 1000, "section": "Recommended" }
+    {
+      "title": "Rail in Air",
+      "creator": "Majisok",
+      "plays": 5348141,
+      "likes": 53811,
+      "comments": 7387,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Ragdoll Slingshots",
+      "creator": "alex",
+      "plays": 3011727,
+      "likes": 20109,
+      "comments": 1876,
+      "remixes": 2,
+      "isRemix": false,
+      "genre": "Action"
+    },
+    {
+      "title": "ASMR Sparkle & Shine",
+      "creator": "falgunichakraborty",
+      "plays": 2942119,
+      "likes": 38464,
+      "comments": 6041,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "Casual"
+    },
+    {
+      "title": "capy's flight adventure",
+      "creator": "fabiyamada",
+      "plays": 2569848,
+      "likes": 12365,
+      "comments": 2700,
+      "remixes": 167,
+      "isRemix": false,
+      "genre": "Adventure"
+    },
+    {
+      "title": "Papercut.io",
+      "creator": "blackwidowink",
+      "plays": 2183509,
+      "likes": 25997,
+      "comments": 2147,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "IO"
+    },
+    {
+      "title": "Pottery Master 3D",
+      "creator": "Majisok",
+      "plays": 1322950,
+      "likes": 25351,
+      "comments": 3753,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "BLOCKY SNIPER HUNTER",
+      "creator": "Leevai",
+      "plays": 1050654,
+      "likes": 11477,
+      "comments": 855,
+      "remixes": 2,
+      "isRemix": false,
+      "genre": "Shooter"
+    },
+    {
+      "title": "Speed Per Step",
+      "creator": "archeologist",
+      "plays": 1019693,
+      "likes": 19765,
+      "comments": 4219,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Hyper-casual"
+    },
+    {
+      "title": "Kick Skills World Cup",
+      "creator": "dantg",
+      "plays": 737260,
+      "likes": 12322,
+      "comments": 1070,
+      "remixes": 0,
+      "isRemix": true,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "World Cup Legends",
+      "creator": "Majisok",
+      "plays": 665846,
+      "likes": 17313,
+      "comments": 1420,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "BARBIE Styling Studio",
+      "creator": "Leevai",
+      "plays": 595169,
+      "likes": 12296,
+      "comments": 931,
+      "remixes": 0,
+      "isRemix": true,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "【ZOMBIE】 LAST HILL",
+      "creator": "GameNaga",
+      "plays": 582890,
+      "likes": 9234,
+      "comments": 419,
+      "remixes": 2,
+      "isRemix": false,
+      "genre": "Shooter"
+    },
+    {
+      "title": "Chess Online",
+      "creator": "ledox",
+      "plays": 551304,
+      "likes": 6088,
+      "comments": 959,
+      "remixes": 3,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "EvoBladeWars.io",
+      "creator": "Leevai",
+      "plays": 543408,
+      "likes": 6602,
+      "comments": 382,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Era.io",
+      "creator": "archeologist",
+      "plays": 538984,
+      "likes": 9545,
+      "comments": 883,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "IO"
+    },
+    {
+      "title": "Stacks",
+      "creator": "blackwidowink",
+      "plays": 404159,
+      "likes": 3366,
+      "comments": 496,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Pixel Havoc",
+      "creator": "SkulHunter",
+      "plays": 381191,
+      "likes": 5558,
+      "comments": 184,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Escape from Dogkov",
+      "creator": "FuStudio",
+      "plays": 328227,
+      "likes": 4863,
+      "comments": 177,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "Adventure"
+    },
+    {
+      "title": "Love & DMs",
+      "creator": "avinahlove",
+      "plays": 325917,
+      "likes": 8138,
+      "comments": 2171,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Galactic World Cup",
+      "creator": "aridj",
+      "plays": 321083,
+      "likes": 5474,
+      "comments": 224,
+      "remixes": 0,
+      "isRemix": true,
+      "genre": "Sports"
+    },
+    {
+      "title": "Doll Face Clean-Up",
+      "creator": "ahmadsubhan",
+      "plays": 287164,
+      "likes": 4321,
+      "comments": 402,
+      "remixes": 1,
+      "isRemix": true,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Police Chase",
+      "creator": "archeologist",
+      "plays": 265923,
+      "likes": 3817,
+      "comments": 390,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Shawarma Street Tycoon",
+      "creator": "omaralhind",
+      "plays": 232480,
+      "likes": 1430,
+      "comments": 246,
+      "remixes": 2,
+      "isRemix": false,
+      "genre": "Simulation"
+    },
+    {
+      "title": "The Great Escape Artist",
+      "creator": "apo11o",
+      "plays": 218841,
+      "likes": 4284,
+      "comments": 197,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Adventure"
+    },
+    {
+      "title": "Steal a Brainrot",
+      "creator": "hybrixmaps",
+      "plays": 200486,
+      "likes": 3173,
+      "comments": 226,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Pigeon Mob: Park Invasion",
+      "creator": "Olliee",
+      "plays": 198625,
+      "likes": 3817,
+      "comments": 153,
+      "remixes": 2,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Goomba Battle",
+      "creator": "daltonkid",
+      "plays": 166544,
+      "likes": 1125,
+      "comments": 82,
+      "remixes": 2,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Yuck Smoothie",
+      "creator": "OPM",
+      "plays": 146183,
+      "likes": 2498,
+      "comments": 124,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Memory Match Mania",
+      "creator": "houerd",
+      "plays": 144878,
+      "likes": 1431,
+      "comments": 216,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "Princess Puzzle World",
+      "creator": "omaralhind",
+      "plays": 131186,
+      "likes": 1709,
+      "comments": 186,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "Ghost Car Circuit 3D",
+      "creator": "CoF",
+      "plays": 131147,
+      "likes": 1897,
+      "comments": 112,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Racing"
+    },
+    {
+      "title": "Eatropolis",
+      "creator": "Absoulute_Random_Studios",
+      "plays": 120918,
+      "likes": 3049,
+      "comments": 175,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Mint Chess",
+      "creator": "PotatoBit",
+      "plays": 105443,
+      "likes": 1167,
+      "comments": 139,
+      "remixes": 2,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "Cartoon Coloring Squad",
+      "creator": "ronald0927",
+      "plays": 90312,
+      "likes": 1781,
+      "comments": 96,
+      "remixes": 1,
+      "isRemix": true,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Sword Chest: Idle Collector",
+      "creator": "Coppapu",
+      "plays": 79405,
+      "likes": 1153,
+      "comments": 427,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Chibi Princess Stylist",
+      "creator": "erika",
+      "plays": 79381,
+      "likes": 1887,
+      "comments": 146,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Mall Watch",
+      "creator": "kaleoartes",
+      "plays": 74543,
+      "likes": 1567,
+      "comments": 314,
+      "remixes": 17,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Hello Kitty's Dream Room",
+      "creator": "tiabeanie",
+      "plays": 73202,
+      "likes": 1235,
+      "comments": 53,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Adventure"
+    },
+    {
+      "title": "Pee Panic: Draw To Relief",
+      "creator": "AshPlayz",
+      "plays": 68176,
+      "likes": 929,
+      "comments": 52,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "Chess King",
+      "creator": "creater910",
+      "plays": 57790,
+      "likes": 639,
+      "comments": 79,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "Vlogger Jigsaw Puzzle",
+      "creator": "MINDS.Fun.Game",
+      "plays": 44788,
+      "likes": 483,
+      "comments": 51,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "Cinnamoroll’s Cloud Room",
+      "creator": "N0x",
+      "plays": 42713,
+      "likes": 1088,
+      "comments": 94,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Liquid Sort Puzzle",
+      "creator": "dblue17317",
+      "plays": 40516,
+      "likes": 540,
+      "comments": 30,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "Master Chess",
+      "creator": "Galaxysmith90",
+      "plays": 33585,
+      "likes": 262,
+      "comments": 41,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "Totally Precise Polygon Simulator",
+      "creator": "maximtsai",
+      "plays": 29978,
+      "likes": 289,
+      "comments": 32,
+      "remixes": 0,
+      "isRemix": true,
+      "genre": "Simulation"
+    },
+    {
+      "title": "Chess Clash",
+      "creator": "BeCool",
+      "plays": 29116,
+      "likes": 161,
+      "comments": 33,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "Classic Chess",
+      "creator": "Preeti",
+      "plays": 24424,
+      "likes": 283,
+      "comments": 18,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "The Super Chess",
+      "creator": "Jesuspro67",
+      "plays": 24196,
+      "likes": 282,
+      "comments": 49,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "RICH MINECRAFT",
+      "creator": "DONYX_FF",
+      "plays": 24083,
+      "likes": 490,
+      "comments": 32,
+      "remixes": 0,
+      "isRemix": true,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Factory Frizzle 2",
+      "creator": "Thrror92",
+      "plays": 16725,
+      "likes": 331,
+      "comments": 30,
+      "remixes": 3,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Tile Match Flowers",
+      "creator": "gofunstar1",
+      "plays": 12301,
+      "likes": 298,
+      "comments": 29,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "Royal Chess 3D",
+      "creator": "nathandemu",
+      "plays": 10850,
+      "likes": 149,
+      "comments": 13,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "Meme Match Mania",
+      "creator": "jennyjenny",
+      "plays": 10590,
+      "likes": 315,
+      "comments": 17,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "Numpuz Challenge",
+      "creator": "choudharyn2270",
+      "plays": 9886,
+      "likes": 187,
+      "comments": 5,
+      "remixes": 0,
+      "isRemix": true,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "AI Chess Arena",
+      "creator": "earrly",
+      "plays": 9327,
+      "likes": 75,
+      "comments": 8,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "Big Boi",
+      "creator": "mixed",
+      "plays": 8917,
+      "likes": 71,
+      "comments": 10,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Divine Reckoning",
+      "creator": "Ansyg",
+      "plays": 5083,
+      "likes": 126,
+      "comments": 5,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Royal Gambit",
+      "creator": "gankit194",
+      "plays": 3289,
+      "likes": 33,
+      "comments": 1,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "99 DAYS AS A BRAINROT",
+      "creator": "Leevai",
+      "plays": 1620,
+      "likes": 22,
+      "comments": 13,
+      "remixes": 0,
+      "isRemix": true,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Chrono Chess",
+      "creator": "pyromacer",
+      "plays": 1179,
+      "likes": 10,
+      "comments": 0,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Puzzle"
+    }
   ]
 }
