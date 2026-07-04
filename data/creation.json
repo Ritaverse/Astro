@@ -1,0 +1,52 @@
+{
+  "collected": "2026-07-03",
+  "creation_metrics": {
+    "total_games_created": 75000,
+    "new_games_per_week": 1000,
+    "public_launch": "2025-08",
+    "typical_build_time": "minutes to a couple of days",
+    "platform_cost": "free to create"
+  },
+  "ai_agent_team": [
+    { "agent": "Visuals / Art", "role": "Generates game art, sprites, backgrounds, VFX" },
+    { "agent": "UI Design", "role": "Crafts intuitive in-game UI and HUD" },
+    { "agent": "Narrative / Story", "role": "Writes story, dialogue, quests, interactive text" },
+    { "agent": "Audio", "role": "Composes music, sound effects, ambience" },
+    { "agent": "Gameplay / Mechanics", "role": "Fine-tunes mechanics, controls, moment-to-moment feel" },
+    { "agent": "Orchestration / Brainstorm", "role": "AI-guided ideation + assembles a game-specific custom editor" }
+  ],
+  "creation_workflow": [
+    "AI-Guided Brainstorming — spark or refine the concept in natural language",
+    "Agentic Generation — specialized agents produce art, UI, audio, narrative & mechanics",
+    "Game-Specific Editor — a bespoke, partially-generated edit mode for iteration",
+    "One-Tap Remix & Publish — clone, tweak, and re-share any public game"
+  ],
+  "creator_personas": {
+    "note": "Segment shares below are ILLUSTRATIVE — modeled from qualitative statements in Fortune & Astrocade blog, not published percentages.",
+    "top_user_segment": "Women aged 20-40 (surprising vs. the classic 10-15 male gamer segment)",
+    "segments": [
+      { "persona": "First-time / no-code creators", "share_est": 55, "descr": "No prior dev or coding experience; many top earners come from outside the games industry" },
+      { "persona": "Hobbyist remixers", "share_est": 22, "descr": "Clone and tweak existing games via one-tap remix" },
+      { "persona": "Competitive jammers", "share_est": 14, "descr": "Compete in bi-weekly game jams for cash + spotlight" },
+      { "persona": "Seasoned developers", "share_est": 9, "descr": "Experienced devs seeking distribution & audience" }
+    ]
+  },
+  "monetization_funnel": {
+    "step_create": "Free — anyone can generate & publish",
+    "gate_monetization": "100K significant plays in 30 days unlocks earnings",
+    "feed_bonus_usd": 100,
+    "example_earning_usd": 700,
+    "example_build_time": "a few days",
+    "top_creators": "thousands of dollars per month",
+    "paid_last_year_usd": 50000,
+    "creator_fund_usd": 10000000
+  },
+  "sources": [
+    "https://www.astrocade.com/create",
+    "https://www.astrocade.com/creators",
+    "https://www.astrocade.com/blog/astrocade-2-worlds-first-agentic-ai-game-creation-platform",
+    "https://www.astrocade.com/blog/how-game-creators-are-turning-creativity-into-cash-on-astrocade",
+    "https://www.globenewswire.com/news-release/2025/07/30/3124369/0/en/Astrocade-Rolls-Out-AI-Agent-Powered-Game-Creation-Experience.html",
+    "https://fortune.com/2026/05/05/astrocade-raises-56-million-series-b-sequoia-video-games-platform-ali-amir-sadeghian/"
+  ]
+}

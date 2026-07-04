@@ -1,0 +1,42 @@
+{
+  "collected": "2026-07-03",
+  "company": {
+    "name": "Astrocade",
+    "tagline": "Wish-to-game: AI-powered social gaming universe",
+    "founded": "Late 2022",
+    "founders": ["Amir Sadeghian", "Ali Sadeghian", "Fei-Fei Li"],
+    "headquarters": "Los Altos, California",
+    "positioning": "World's first agentic AI game-creation platform / 'TikTok for games'"
+  },
+  "platform_metrics": {
+    "monthly_active_users": 5000000,
+    "engaged_users_since_launch": 20000000,
+    "monthly_game_plays": 140000000,
+    "total_games": 75000,
+    "countries": 80,
+    "creators_with_1m_plays": 30
+  },
+  "funding": {
+    "total_raised_usd": 68000000,
+    "latest_round": "Series A + Series B ($56M combined)",
+    "announced": "2026-05-05",
+    "lead_investors": ["Sequoia Capital (Series B)", "Sea (Series A)"],
+    "other_investors": ["Google AI Futures Fund", "NVIDIA", "LG Technology Ventures", "Dentsu Ventures", "Conviction Embed", "Chaac Ventures", "Rogue VC"],
+    "creator_incentive_program_usd": 10000000
+  },
+  "community": {
+    "discord_members": 58485,
+    "office_hours": "Every Wednesday & Friday (live game feedback)",
+    "programs": ["Astro Academy (free game bootcamp)", "Ambassador Program", "Game Jams"],
+    "culture": "Creator-led; organic growth without giveaways; peer feedback, milestone celebration, collaborative remix culture"
+  },
+  "sources": [
+    "https://www.astrocade.com/",
+    "https://www.astrocade.com/about-us",
+    "https://www.astrocade.com/blog/astrocade-2-worlds-first-agentic-ai-game-creation-platform",
+    "https://www.astrocade.com/blog/astrocade-community-fastest-most-engaged-discord",
+    "https://fortune.com/2026/05/05/astrocade-raises-56-million-series-b-sequoia-video-games-platform-ali-amir-sadeghian/",
+    "https://www.globenewswire.com/news-release/2025/07/30/3124369/0/en/Astrocade-Rolls-Out-AI-Agent-Powered-Game-Creation-Experience.html",
+    "https://discord.com/invite/astrocade"
+  ]
+}

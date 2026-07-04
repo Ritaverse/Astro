@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AstroBlox — Create Studio (AI Creation) Analytics</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#0a0e1a; --panel:#121829; --panel2:#0f1524; --line:#1e2740;
+    --text:#e8ecf7; --muted:#8a95b5; --accent:#6c5ce7; --accent2:#00d2ff;
+    --good:#22d3a0; --warn:#ffb020; --pink:#ff6ba9;
+    --grad:linear-gradient(135deg,#6c5ce7,#00d2ff);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#1a2240 0%,var(--bg) 55%);
+    color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1320px;margin:0 auto;padding:32px 24px 64px}
+  header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:12px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .logo{width:46px;height:46px;border-radius:12px;background:var(--grad);display:grid;place-items:center;
+    font-weight:800;font-size:20px;box-shadow:0 8px 30px rgba(108,92,231,.45)}
+  h1{margin:0;font-size:24px;letter-spacing:.3px}
+  .sub{color:var(--muted);font-size:13px;margin-top:2px}
+  .pill{padding:5px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px;background:var(--panel2)}
+  nav.tabs{display:flex;gap:8px;margin:0 0 24px}
+  nav.tabs a{padding:7px 16px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:13px;background:var(--panel2)}
+  nav.tabs a.active{background:var(--grad);color:#fff;border-color:transparent;font-weight:600}
+
+  .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:26px}
+  .kpi{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+    border-radius:16px;padding:16px 16px 14px;position:relative;overflow:hidden}
+  .kpi::before{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:3px;background:var(--grad);opacity:.8}
+  .kpi .v{font-size:23px;font-weight:750;letter-spacing:.5px}
+  .kpi .l{color:var(--muted);font-size:11px;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+  .kpi .d{color:var(--good);font-size:11px;margin-top:6px}
+
+  .grid{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-bottom:18px}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+    border-radius:16px;padding:18px 20px}
+  .card h3{margin:0 0 2px;font-size:15px}
+  .card .cap{color:var(--muted);font-size:12px;margin-bottom:14px}
+  .est{color:var(--warn);font-size:10.5px;border:1px solid rgba(255,176,32,.4);border-radius:6px;padding:1px 6px;margin-left:6px}
+  .chart-box{position:relative;height:320px}
+  .chart-sm{position:relative;height:270px}
+
+  /* Agent capability map */
+  .agents{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .agent{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 14px}
+  .agent .h{display:flex;align-items:center;gap:9px;font-weight:650;font-size:13.5px}
+  .agent .ic{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-size:14px;background:rgba(108,92,231,.25)}
+  .agent .r{color:var(--muted);font-size:12px;margin-top:7px;line-height:1.5}
+
+  /* Workflow */
+  .flow{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap}
+  .step{flex:1;min-width:180px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 14px;position:relative}
+  .step .n{font-size:11px;color:var(--accent2);font-weight:700;letter-spacing:.5px}
+  .step .t{font-weight:600;margin:4px 0 5px;font-size:13.5px}
+  .step .d{color:var(--muted);font-size:11.5px;line-height:1.5}
+
+  /* Funnel */
+  .funnel{display:flex;flex-direction:column;gap:8px}
+  .frow{display:flex;align-items:center;gap:12px}
+  .fbar{height:38px;border-radius:9px;background:var(--grad);display:flex;align-items:center;padding:0 14px;color:#fff;font-weight:600;font-size:13px;white-space:nowrap}
+  .fmeta{color:var(--muted);font-size:12px}
+
+  .note{font-size:12px;color:var(--muted);line-height:1.6}
+  .note b{color:var(--text)}
+  footer{margin-top:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:16px}
+  a{color:var(--accent2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  @media(max-width:1080px){.kpis{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:1fr}.agents{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="logo">A</div>
+      <div>
+        <h1>Create Studio · AI Creation Analytics</h1>
+        <div class="sub">How games get made on Astrocade — agents, volume, personas & the money funnel</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <span class="pill">Data collected 2026-07-03</span>
+      <span class="pill">Launched Aug 2025</span>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <a href="index.html">Games &amp; Community</a>
+    <a href="creation.html" class="active">Create Studio</a>
+  </nav>
+
+  <!-- KPIs -->
+  <section class="kpis">
+    <div class="kpi"><div class="v">75K+</div><div class="l">Games Created</div><div class="d">~11 mo since launch</div></div>
+    <div class="kpi"><div class="v">1,000+</div><div class="l">New Games / Week</div><div class="d">~143 per day</div></div>
+    <div class="kpi"><div class="v">6</div><div class="l">Specialized AI Agents</div><div class="d">art→audio→mechanics</div></div>
+    <div class="kpi"><div class="v">&lt;15 min</div><div class="l">Idea → Playable</div><div class="d">no code required</div></div>
+    <div class="kpi"><div class="v">$50K+</div><div class="l">Paid to Creators (yr)</div><div class="d">$10M fund committed</div></div>
+    <div class="kpi"><div class="v">100K</div><div class="l">Plays to Monetize</div><div class="d">within 30 days</div></div>
+  </section>
+
+  <!-- Row 1: cumulative games + weekly rate -->
+  <section class="grid">
+    <div class="card">
+      <h3>Cumulative Games Created<span class="est">MODELED</span></h3>
+      <div class="cap">Anchored to two real points — 0 at Aug 2025 launch, 75K by May 2026 — interpolated at ~1,000/week</div>
+      <div class="chart-box"><canvas id="chartCumulative"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>Creator Personas<span class="est">ILLUSTRATIVE</span></h3>
+      <div class="cap">Modeled from qualitative sources — top user segment is women 20-40</div>
+      <div class="chart-sm"><canvas id="chartPersona"></canvas></div>
+    </div>
+  </section>
+
+  <!-- Row 2: AI agent capability map -->
+  <section class="card" style="margin-bottom:18px">
+    <h3>AI Agent Team — Tool Usage in Creation</h3>
+    <div class="cap">Every generated game is assembled by a collaborating team of specialized agents. Coverage bars are illustrative of how often each capability is invoked.<span class="est">COVERAGE = EST.</span></div>
+    <div class="agents" id="agentGrid"></div>
+    <div class="chart-sm" style="height:230px;margin-top:16px"><canvas id="chartAgents"></canvas></div>
+  </section>
+
+  <!-- Row 3: workflow -->
+  <section class="card" style="margin-bottom:18px">
+    <h3>Creation Workflow</h3>
+    <div class="cap">Natural-language in, playable game out — with a bespoke editor per game</div>
+    <div class="flow" id="flow"></div>
+  </section>
+
+  <!-- Row 4: monetization funnel + methodology -->
+  <section class="grid">
+    <div class="card">
+      <h3>Creator Monetization Funnel</h3>
+      <div class="cap">Free to create → engagement gate → performance earnings</div>
+      <div class="funnel" id="funnel"></div>
+      <p class="note" style="margin-top:14px">
+        Feed selection pays <b>$100</b> upfront; some creators earned <b>$700+</b> from games built in a
+        few days; top creators make <b>thousands / month</b> — many with <b>no coding background</b>.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Methodology &amp; Data Provenance</h3>
+      <div class="cap">What's measured vs. modeled — read before citing</div>
+      <p class="note">
+        <b>Measured (published):</b> 75K+ games created, 1,000+ new games/week, the 6-agent creation
+        system, &lt;15-min build time, 100K-plays monetization gate, $100 feed bonus, $50K+ paid last
+        year, $10M creator fund.<br><br>
+        <b>Modeled:</b> the <b>cumulative-games curve</b> interpolates between two real anchors (0 at the
+        Aug 2025 launch, 75K by May 2026) at the stated ~1,000/week rate — the shape is an estimate.<br><br>
+        <b>Illustrative:</b> <b>persona shares</b> and <b>per-agent coverage %</b> are analyst estimates
+        derived from qualitative statements (Fortune notes women 20-40 as the top segment; many top
+        creators come from outside games). Astrocade does not publish these breakdowns — treat as
+        directional, not exact.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    Sources:
+    <a href="https://www.astrocade.com/create">astrocade.com/create</a> ·
+    <a href="https://www.astrocade.com/creators">/creators</a> ·
+    <a href="https://www.astrocade.com/blog/astrocade-2-worlds-first-agentic-ai-game-creation-platform">Astrocade 2.0 blog</a> ·
+    <a href="https://www.astrocade.com/blog/how-game-creators-are-turning-creativity-into-cash-on-astrocade">Creator earnings blog</a> ·
+    <a href="https://fortune.com/2026/05/05/astrocade-raises-56-million-series-b-sequoia-video-games-platform-ali-amir-sadeghian/">Fortune</a> ·
+    <a href="https://www.globenewswire.com/news-release/2025/07/30/3124369/0/en/Astrocade-Rolls-Out-AI-Agent-Powered-Game-Creation-Experience.html">GlobeNewswire</a>.
+    Raw data in <code>data/creation.json</code>. Generated 2026-07-03.
+  </footer>
+</div>
+
+<script>
+const PALETTE=["#6c5ce7","#00d2ff","#22d3a0","#ffb020","#ff6ba9","#a78bfa"];
+const fmt=n=>n>=1e6?(n/1e6).toFixed(n%1e6?1:0)+"M":n>=1e3?(n/1e3).toFixed(n%1e3?0:0)+"K":n;
+Chart.defaults.color="#8a95b5";
+Chart.defaults.font.family="-apple-system,Segoe UI,Roboto,sans-serif";
+Chart.defaults.borderColor="#1e2740";
+
+// ---- Cumulative games (modeled, anchored to 0 @ launch, 75k @ month 9) ----
+const months=["Aug'25","Sep","Oct","Nov","Dec","Jan'26","Feb","Mar","Apr","May","Jun","Jul"];
+// slight S-curve up to 75k at index 9 (May), then continue at ~4.3k/mo
+const cum=[0,4000,9500,16000,24000,33000,44000,56000,66000,75000,79300,83600];
+new Chart(document.getElementById("chartCumulative"),{
+  type:"line",
+  data:{labels:months,datasets:[{data:cum,label:"Cumulative games",fill:true,
+    borderColor:"#6c5ce7",tension:.35,pointRadius:3,
+    backgroundColor:(c)=>{const g=c.chart.ctx.createLinearGradient(0,0,0,320);
+      g.addColorStop(0,"rgba(108,92,231,.35)");g.addColorStop(1,"rgba(108,92,231,0)");return g;}}]},
+  options:{maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>" ~"+fmt(c.raw)+" games"}}},
+    scales:{y:{ticks:{callback:fmt},grid:{color:"#161d33"}},x:{grid:{display:false}}}}
+});
+
+// ---- Personas donut ----
+const personas=[
+  {p:"First-time / no-code",s:55},{p:"Hobbyist remixers",s:22},
+  {p:"Competitive jammers",s:14},{p:"Seasoned developers",s:9}
+];
+new Chart(document.getElementById("chartPersona"),{
+  type:"doughnut",
+  data:{labels:personas.map(x=>x.p),datasets:[{data:personas.map(x=>x.s),
+    backgroundColor:PALETTE,borderColor:"#0f1524",borderWidth:2}]},
+  options:{maintainAspectRatio:false,cutout:"58%",
+    plugins:{legend:{position:"right",labels:{boxWidth:11,font:{size:11}}},
+      tooltip:{callbacks:{label:c=>" "+c.label+": ~"+c.raw+"%"}}}}
+});
+
+// ---- Agent capability map ----
+const AGENTS=[
+  {a:"Visuals / Art",ic:"🎨",r:"Sprites, backgrounds, characters & VFX",cov:98},
+  {a:"UI Design",ic:"🧩",r:"HUD, menus & intuitive on-screen controls",cov:95},
+  {a:"Gameplay / Mechanics",ic:"🎮",r:"Rules, controls & moment-to-moment feel",cov:100},
+  {a:"Audio",ic:"🔊",r:"Music, SFX & ambience",cov:80},
+  {a:"Narrative / Story",ic:"📖",r:"Dialogue, quests & interactive text",cov:55},
+  {a:"Orchestration / Brainstorm",ic:"🧠",r:"Ideation + builds a game-specific editor",cov:100}
+];
+document.getElementById("agentGrid").innerHTML=AGENTS.map(x=>`
+  <div class="agent"><div class="h"><div class="ic">${x.ic}</div>${x.a}</div>
+  <div class="r">${x.r}</div></div>`).join("");
+new Chart(document.getElementById("chartAgents"),{
+  type:"bar",
+  data:{labels:AGENTS.map(x=>x.a),datasets:[{data:AGENTS.map(x=>x.cov),
+    label:"Est. coverage (% of games invoking agent)",
+    backgroundColor:AGENTS.map((_,i)=>PALETTE[i%PALETTE.length]),borderRadius:6,borderSkipped:false}]},
+  options:{maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>" ~"+c.raw+"% of games"}}},
+    scales:{y:{max:100,ticks:{callback:v=>v+"%"},grid:{color:"#161d33"}},x:{ticks:{font:{size:10}},grid:{display:false}}}}
+});
+
+// ---- Workflow ----
+const STEPS=[
+  {t:"AI-Guided Brainstorm",d:"Spark or refine a concept in plain language"},
+  {t:"Agentic Generation",d:"Agents produce art, UI, audio, story & mechanics"},
+  {t:"Game-Specific Editor",d:"A bespoke, partially-generated edit mode to iterate"},
+  {t:"One-Tap Remix & Publish",d:"Clone, tweak & re-share any public game"}
+];
+document.getElementById("flow").innerHTML=STEPS.map((s,i)=>`
+  <div class="step"><div class="n">STEP ${i+1}</div><div class="t">${s.t}</div><div class="d">${s.d}</div></div>`).join("");
+
+// ---- Monetization funnel ----
+const FUN=[
+  {t:"Create — free for anyone",w:100,m:"No cost, no code"},
+  {t:"Publish to feed",w:78,m:"$100 bonus if selected"},
+  {t:"100K significant plays / 30d",w:48,m:"Monetization unlocks"},
+  {t:"Performance earnings",w:30,m:"$700+ seen; top creators $1000s/mo"}
+];
+document.getElementById("funnel").innerHTML=FUN.map(f=>`
+  <div class="frow"><div class="fbar" style="width:${f.w}%">${f.t}</div><div class="fmeta">${f.m}</div></div>`).join("");
+</script>
+</body>
+</html>

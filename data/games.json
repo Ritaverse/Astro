@@ -1,0 +1,22 @@
+{
+  "collected": "2026-07-03",
+  "source": "astrocade.com homepage gallery (Players' Choice / Trending / Recommended sections)",
+  "notes": "plays = lifetime play/visit count shown on gallery cards. genre is analyst-assigned from title + description (Astrocade does not expose a genre field publicly). likes & shares are NOT publicly exposed in fetchable HTML and are omitted rather than fabricated.",
+  "games": [
+    { "title": "ASMR Sparkle & Shine", "creator": "falgunichakraborty", "genre": "Casual", "plays": 2900000, "section": "Players' Choice" },
+    { "title": "Royal Showdown", "creator": "devinthegoat", "genre": "Strategy", "plays": 1500000, "section": "Players' Choice" },
+    { "title": "Gun Merge 3D: Zombie Apocalypse", "creator": "archeologist", "genre": "Merge", "plays": 605000, "section": "Players' Choice" },
+    { "title": "FORMULA CRASH RACER", "creator": "MAT_GAMER", "genre": "Racing", "plays": 402000, "section": "Players' Choice" },
+    { "title": "Mini Tanks 2", "creator": "KibblezGamez", "genre": "Action", "plays": 731000, "section": "Players' Choice" },
+    { "title": "Era.io", "creator": "archeologist", "genre": "IO", "plays": 534000, "section": "Trending" },
+    { "title": "The Journey Begins", "creator": "DeathBlast", "genre": "Adventure", "plays": 279000, "section": "Trending" },
+    { "title": "BLOCKY SNIPER HUNTER", "creator": "Leevai", "genre": "Shooter", "plays": 1000000, "section": "Trending" },
+    { "title": "Build It", "creator": "Alina", "genre": "Simulation", "plays": 94900, "section": "Trending" },
+    { "title": "Pee Panic: Draw To Relief", "creator": "AshPlayz", "genre": "Puzzle", "plays": 45300, "section": "Trending" },
+    { "title": "Speed Per Step", "creator": "archeologist", "genre": "Hyper-casual", "plays": 1000000, "section": "Recommended" },
+    { "title": "Epic Minecraft", "creator": "EL_HUESO", "genre": "Sandbox", "plays": 225000, "section": "Recommended" },
+    { "title": "Naruto: Merge Heroes", "creator": "Leevai", "genre": "Merge", "plays": 511000, "section": "Recommended" },
+    { "title": "Brilliant Move!!", "creator": "standardcombo", "genre": "Puzzle", "plays": 820000, "section": "Recommended" },
+    { "title": "Divine Eight", "creator": "houerd", "genre": "Puzzle", "plays": 1000, "section": "Recommended" }
+  ]
+}

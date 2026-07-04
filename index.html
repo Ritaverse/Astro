@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AstroBlox — Astrocade Analytics Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#0a0e1a; --panel:#121829; --panel2:#0f1524; --line:#1e2740;
+    --text:#e8ecf7; --muted:#8a95b5; --accent:#6c5ce7; --accent2:#00d2ff;
+    --good:#22d3a0; --warn:#ffb020; --pink:#ff6ba9;
+    --grad:linear-gradient(135deg,#6c5ce7,#00d2ff);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#1a2240 0%,var(--bg) 55%);
+    color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1320px;margin:0 auto;padding:32px 24px 64px}
+  header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .logo{width:46px;height:46px;border-radius:12px;background:var(--grad);display:grid;place-items:center;
+    font-weight:800;font-size:20px;box-shadow:0 8px 30px rgba(108,92,231,.45)}
+  h1{margin:0;font-size:24px;letter-spacing:.3px}
+  .sub{color:var(--muted);font-size:13px;margin-top:2px}
+  .pill{padding:5px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px;background:var(--panel2)}
+  nav.tabs{display:flex;gap:8px;margin:0 0 24px}
+  nav.tabs a{padding:7px 16px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:13px;background:var(--panel2);text-decoration:none}
+  nav.tabs a.active{background:var(--grad);color:#fff;border-color:transparent;font-weight:600}
+
+  .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:26px}
+  .kpi{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+    border-radius:16px;padding:16px 16px 14px;position:relative;overflow:hidden}
+  .kpi::before{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:3px;background:var(--grad);opacity:.8}
+  .kpi .v{font-size:24px;font-weight:750;letter-spacing:.5px}
+  .kpi .l{color:var(--muted);font-size:11.5px;margin-top:4px;text-transform:uppercase;letter-spacing:.6px}
+  .kpi .d{color:var(--good);font-size:11px;margin-top:6px}
+
+  .grid{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-bottom:18px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-bottom:18px}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);
+    border-radius:16px;padding:18px 20px}
+  .card h3{margin:0 0 2px;font-size:15px}
+  .card .cap{color:var(--muted);font-size:12px;margin-bottom:14px}
+  .chart-box{position:relative;height:320px}
+  .chart-sm{position:relative;height:260px}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;user-select:none}
+  th:hover{color:var(--text)}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  tbody tr:hover{background:rgba(108,92,231,.08)}
+  .tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;border:1px solid var(--line);background:var(--panel2)}
+  .bar-cell{position:relative}
+  .bar-cell .fill{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,rgba(108,92,231,.35),rgba(0,210,255,.18));border-radius:4px;z-index:0}
+  .bar-cell span{position:relative;z-index:1}
+
+  .comm{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:4px}
+  .comm .c{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px}
+  .comm .c .v{font-size:19px;font-weight:700}
+  .comm .c .l{color:var(--muted);font-size:11px;margin-top:3px}
+  ul.dots{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+  ul.dots li{margin:5px 0}
+  .note{font-size:12px;color:var(--muted);line-height:1.6}
+  .note b{color:var(--text)}
+  footer{margin-top:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:16px}
+  a{color:var(--accent2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  @media(max-width:1080px){.kpis{grid-template-columns:repeat(3,1fr)}.grid,.grid3{grid-template-columns:1fr}.comm{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="logo">A</div>
+      <div>
+        <h1>AstroBlox · Astrocade Analytics</h1>
+        <div class="sub">Games, genres & community intelligence — AI social-gaming platform</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <span class="pill">Data collected 2026-07-03</span>
+      <span class="pill">Sample: 15 featured games</span>
+      <span class="pill" id="src-pill">Sources: astrocade.com · Fortune · Discord</span>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <a href="index.html" class="active">Games &amp; Community</a>
+    <a href="creation.html">Create Studio</a>
+  </nav>
+
+  <!-- KPIs -->
+  <section class="kpis">
+    <div class="kpi"><div class="v">5.0M</div><div class="l">Monthly Active Users</div><div class="d">20M engaged since launch</div></div>
+    <div class="kpi"><div class="v">140M</div><div class="l">Game Plays / Month</div><div class="d">~28 plays per MAU</div></div>
+    <div class="kpi"><div class="v">75K+</div><div class="l">Games Hosted</div><div class="d">80 countries</div></div>
+    <div class="kpi"><div class="v">58.5K</div><div class="l">Discord Members</div><div class="d">30+ creators &gt;1M plays</div></div>
+    <div class="kpi"><div class="v">$68M</div><div class="l">Total Funding</div><div class="d">Sequoia · Sea · NVIDIA</div></div>
+    <div class="kpi"><div class="v">$10M</div><div class="l">Creator Incentive Fund</div><div class="d">Announced May 2026</div></div>
+  </section>
+
+  <!-- Row 1: top games + genre donut -->
+  <section class="grid">
+    <div class="card">
+      <h3>Top Featured Games by Lifetime Plays</h3>
+      <div class="cap">Homepage gallery sample (Players' Choice · Trending · Recommended)</div>
+      <div class="chart-box"><canvas id="chartGames"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>Play Volume by Genre</h3>
+      <div class="cap">Share of total sampled plays · analyst-classified genres</div>
+      <div class="chart-sm"><canvas id="chartGenre"></canvas></div>
+    </div>
+  </section>
+
+  <!-- Row 2: creators + genre count -->
+  <section class="grid">
+    <div class="card">
+      <h3>Top Creators by Aggregated Plays</h3>
+      <div class="cap">Sum of plays across featured titles per creator</div>
+      <div class="chart-box"><canvas id="chartCreators"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>Genre Footprint</h3>
+      <div class="cap">Titles vs. avg plays per title, by genre</div>
+      <div class="chart-sm"><canvas id="chartGenreCount"></canvas></div>
+    </div>
+  </section>
+
+  <!-- Row 3: table -->
+  <section class="card" style="margin-bottom:18px">
+    <h3>Featured Games — Detail</h3>
+    <div class="cap">Click a column header to sort. Bars scale to the max play count in the sample.</div>
+    <table id="gamesTable">
+      <thead>
+        <tr>
+          <th data-k="title">Game</th>
+          <th data-k="creator">Creator</th>
+          <th data-k="genre">Genre</th>
+          <th data-k="section">Feed</th>
+          <th data-k="plays" class="n">Plays ▾</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- Row 4: community + notes -->
+  <section class="grid">
+    <div class="card">
+      <h3>Community Snapshot — Discord</h3>
+      <div class="cap">"Fastest, most-engaged creator community" per Astrocade</div>
+      <div class="comm">
+        <div class="c"><div class="v">58,485</div><div class="l">Members</div></div>
+        <div class="c"><div class="v">2×/wk</div><div class="l">Office Hours (Wed/Fri)</div></div>
+        <div class="c"><div class="v">30+</div><div class="l">Creators &gt;1M plays</div></div>
+        <div class="c"><div class="v">80</div><div class="l">Countries</div></div>
+      </div>
+      <ul class="dots">
+        <li><b>Astro Academy</b> — free bootcamp: mechanics, engagement, art, monetization</li>
+        <li><b>Ambassador Program</b> — gated on shipping a game in #game-showcase</li>
+        <li><b>Game Jams</b> — themed events with community showcases</li>
+        <li>Creator-led culture: WIP feedback, milestone celebration, remix collaboration</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Methodology &amp; Data Provenance</h3>
+      <div class="cap">Read before citing — mix of measured and estimated fields</div>
+      <p class="note">
+        <b>Measured:</b> per-game lifetime <b>plays/visits</b> scraped from the astrocade.com gallery
+        cards (15 featured titles). Platform KPIs (MAU, monthly plays, game count, funding, Discord size)
+        sourced from Astrocade, Fortune, and GlobeNewswire.<br><br>
+        <b>Estimated / assigned:</b> <b>Genre</b> is analyst-classified from each game's title and
+        description — Astrocade exposes no public genre field.<br><br>
+        <b>Not available:</b> per-game <b>likes</b> and <b>shares</b> are rendered client-side by the
+        site's SPA and are <b>not present in fetchable HTML</b>. They are intentionally omitted rather
+        than fabricated. To capture them, a logged-in browser-automation pass over each game page would
+        be required.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <b>Astrocade</b> — founded late 2022 by Amir Sadeghian, Ali Sadeghian &amp; Fei-Fei Li · Los Altos, CA ·
+    "world's first agentic AI game-creation platform." Sources:
+    <a href="https://www.astrocade.com/">astrocade.com</a> ·
+    <a href="https://fortune.com/2026/05/05/astrocade-raises-56-million-series-b-sequoia-video-games-platform-ali-amir-sadeghian/">Fortune (funding)</a> ·
+    <a href="https://www.astrocade.com/blog/astrocade-community-fastest-most-engaged-discord">Community blog</a> ·
+    <a href="https://discord.com/invite/astrocade">Discord</a>.
+    Dashboard generated 2026-07-03. Underlying data in <code>data/games.json</code> &amp; <code>data/platform.json</code>.
+  </footer>
+</div>
+
+<script>
+// ---- Dataset (mirrors data/games.json) ----
+const GAMES = [
+  { title:"ASMR Sparkle & Shine", creator:"falgunichakraborty", genre:"Casual", plays:2900000, section:"Players' Choice" },
+  { title:"Royal Showdown", creator:"devinthegoat", genre:"Strategy", plays:1500000, section:"Players' Choice" },
+  { title:"Gun Merge 3D: Zombie Apocalypse", creator:"archeologist", genre:"Merge", plays:605000, section:"Players' Choice" },
+  { title:"FORMULA CRASH RACER", creator:"MAT_GAMER", genre:"Racing", plays:402000, section:"Players' Choice" },
+  { title:"Mini Tanks 2", creator:"KibblezGamez", genre:"Action", plays:731000, section:"Players' Choice" },
+  { title:"Era.io", creator:"archeologist", genre:"IO", plays:534000, section:"Trending" },
+  { title:"The Journey Begins", creator:"DeathBlast", genre:"Adventure", plays:279000, section:"Trending" },
+  { title:"BLOCKY SNIPER HUNTER", creator:"Leevai", genre:"Shooter", plays:1000000, section:"Trending" },
+  { title:"Build It", creator:"Alina", genre:"Simulation", plays:94900, section:"Trending" },
+  { title:"Pee Panic: Draw To Relief", creator:"AshPlayz", genre:"Puzzle", plays:45300, section:"Trending" },
+  { title:"Speed Per Step", creator:"archeologist", genre:"Hyper-casual", plays:1000000, section:"Recommended" },
+  { title:"Epic Minecraft", creator:"EL_HUESO", genre:"Sandbox", plays:225000, section:"Recommended" },
+  { title:"Naruto: Merge Heroes", creator:"Leevai", genre:"Merge", plays:511000, section:"Recommended" },
+  { title:"Brilliant Move!!", creator:"standardcombo", genre:"Puzzle", plays:820000, section:"Recommended" },
+  { title:"Divine Eight", creator:"houerd", genre:"Puzzle", plays:1000, section:"Recommended" }
+];
+
+const PALETTE = ["#6c5ce7","#00d2ff","#22d3a0","#ffb020","#ff6ba9","#a78bfa","#38bdf8","#f472b6","#34d399","#fbbf24","#818cf8","#2dd4bf"];
+const fmt = n => n>=1e6 ? (n/1e6).toFixed(n%1e6?1:0)+"M" : n>=1e3 ? (n/1e3).toFixed(n%1e3?0:0)+"K" : n;
+Chart.defaults.color = "#8a95b5";
+Chart.defaults.font.family = "-apple-system,Segoe UI,Roboto,sans-serif";
+Chart.defaults.borderColor = "#1e2740";
+
+// ---- Aggregations ----
+const byGenre = {};
+GAMES.forEach(g=>{ (byGenre[g.genre] ||= {plays:0,count:0}); byGenre[g.genre].plays+=g.plays; byGenre[g.genre].count++; });
+const genreRows = Object.entries(byGenre).map(([k,v])=>({genre:k,...v})).sort((a,b)=>b.plays-a.plays);
+
+const byCreator = {};
+GAMES.forEach(g=>{ byCreator[g.creator]=(byCreator[g.creator]||0)+g.plays; });
+const creatorRows = Object.entries(byCreator).map(([k,v])=>({creator:k,plays:v})).sort((a,b)=>b.plays-a.plays).slice(0,8);
+
+// ---- Chart 1: top games ----
+const topGames = [...GAMES].sort((a,b)=>b.plays-a.plays);
+new Chart(document.getElementById("chartGames"),{
+  type:"bar",
+  data:{ labels: topGames.map(g=>g.title),
+    datasets:[{ data: topGames.map(g=>g.plays), backgroundColor:"#6c5ce7", borderRadius:6, borderSkipped:false }] },
+  options:{ indexAxis:"y", maintainAspectRatio:false,
+    plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>" "+fmt(c.raw)+" plays"}} },
+    scales:{ x:{ticks:{callback:fmt}, grid:{color:"#161d33"}}, y:{ticks:{font:{size:11}}, grid:{display:false}} } }
+});
+
+// ---- Chart 2: genre donut ----
+new Chart(document.getElementById("chartGenre"),{
+  type:"doughnut",
+  data:{ labels: genreRows.map(g=>g.genre),
+    datasets:[{ data: genreRows.map(g=>g.plays), backgroundColor:PALETTE, borderColor:"#0f1524", borderWidth:2 }] },
+  options:{ maintainAspectRatio:false, cutout:"58%",
+    plugins:{ legend:{position:"right", labels:{boxWidth:11,font:{size:11}}},
+      tooltip:{callbacks:{label:c=>" "+c.label+": "+fmt(c.raw)}} } }
+});
+
+// ---- Chart 3: creators ----
+new Chart(document.getElementById("chartCreators"),{
+  type:"bar",
+  data:{ labels: creatorRows.map(c=>c.creator),
+    datasets:[{ data: creatorRows.map(c=>c.plays), backgroundColor:"#00d2ff", borderRadius:6, borderSkipped:false }] },
+  options:{ indexAxis:"y", maintainAspectRatio:false,
+    plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>" "+fmt(c.raw)+" plays"}} },
+    scales:{ x:{ticks:{callback:fmt}, grid:{color:"#161d33"}}, y:{grid:{display:false}} } }
+});
+
+// ---- Chart 4: genre count vs avg plays ----
+new Chart(document.getElementById("chartGenreCount"),{
+  type:"bar",
+  data:{ labels: genreRows.map(g=>g.genre),
+    datasets:[
+      { label:"# Titles", data: genreRows.map(g=>g.count), backgroundColor:"#ffb020", borderRadius:5, yAxisID:"y" },
+      { label:"Avg plays/title", type:"line", data: genreRows.map(g=>Math.round(g.plays/g.count)),
+        borderColor:"#ff6ba9", backgroundColor:"#ff6ba9", tension:.35, yAxisID:"y1", pointRadius:3 }
+    ] },
+  options:{ maintainAspectRatio:false,
+    plugins:{ legend:{labels:{boxWidth:11,font:{size:11}}}, tooltip:{callbacks:{label:c=>" "+c.dataset.label+": "+fmt(c.raw)}} },
+    scales:{ y:{position:"left",grid:{color:"#161d33"},title:{display:true,text:"titles"}},
+      y1:{position:"right",grid:{display:false},ticks:{callback:fmt},title:{display:true,text:"avg plays"}},
+      x:{ticks:{font:{size:10}},grid:{display:false}} } }
+});
+
+// ---- Sortable table ----
+const tbody = document.querySelector("#gamesTable tbody");
+const maxPlays = Math.max(...GAMES.map(g=>g.plays));
+let sortK="plays", sortAsc=false;
+function render(){
+  const rows=[...GAMES].sort((a,b)=>{
+    let r = typeof a[sortK]==="number" ? a[sortK]-b[sortK] : String(a[sortK]).localeCompare(String(b[sortK]));
+    return sortAsc? r : -r;
+  });
+  tbody.innerHTML = rows.map(g=>`
+    <tr>
+      <td>${g.title}</td>
+      <td style="color:var(--muted)">${g.creator}</td>
+      <td><span class="tag">${g.genre}</span></td>
+      <td style="color:var(--muted)">${g.section}</td>
+      <td class="n bar-cell"><div class="fill" style="width:${(g.plays/maxPlays*100).toFixed(1)}%"></div><span>${g.plays.toLocaleString()}</span></td>
+    </tr>`).join("");
+  document.querySelectorAll("#gamesTable th").forEach(th=>{
+    th.textContent = th.textContent.replace(/ [▾▴]$/,"");
+    if(th.dataset.k===sortK) th.textContent += sortAsc?" ▴":" ▾";
+  });
+}
+document.querySelectorAll("#gamesTable th").forEach(th=>{
+  th.addEventListener("click",()=>{ const k=th.dataset.k;
+    if(k===sortK) sortAsc=!sortAsc; else {sortK=k; sortAsc=false;} render(); });
+});
+render();
+</script>
+</body>
+</html>
