@@ -1,5 +1,5 @@
 {
-  "collected": "2026-07-03",
+  "collected": "2026-08-01",
   "company": {
     "name": "Astrocade",
     "tagline": "Wish-to-game: AI-powered social gaming universe",
@@ -10,6 +10,7 @@
   },
   "platform_metrics": {
     "monthly_active_users": 5000000,
+    "daily_active_users": 1000000,
     "engaged_users_since_launch": 20000000,
     "monthly_game_plays": 140000000,
     "total_games": 75000,
@@ -37,6 +38,7 @@
     "https://www.astrocade.com/blog/astrocade-community-fastest-most-engaged-discord",
     "https://fortune.com/2026/05/05/astrocade-raises-56-million-series-b-sequoia-video-games-platform-ali-amir-sadeghian/",
     "https://www.globenewswire.com/news-release/2025/07/30/3124369/0/en/Astrocade-Rolls-Out-AI-Agent-Powered-Game-Creation-Experience.html",
-    "https://discord.com/invite/astrocade"
+    "https://discord.com/invite/astrocade",
+    "https://x.com/PlayAstrocade/status/2060109795722690868"
   ]
 }

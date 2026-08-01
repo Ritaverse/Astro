@@ -84,7 +84,7 @@
       </div>
     </div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
-      <span class="pill">Data collected 2026-07-03</span>
+      <span class="pill">Data collected 2026-08-01</span>
       <span class="pill">Launched Aug 2025</span>
     </div>
   </header>
@@ -169,7 +169,7 @@
     <a href="https://www.astrocade.com/blog/how-game-creators-are-turning-creativity-into-cash-on-astrocade">Creator earnings blog</a> ·
     <a href="https://fortune.com/2026/05/05/astrocade-raises-56-million-series-b-sequoia-video-games-platform-ali-amir-sadeghian/">Fortune</a> ·
     <a href="https://www.globenewswire.com/news-release/2025/07/30/3124369/0/en/Astrocade-Rolls-Out-AI-Agent-Powered-Game-Creation-Experience.html">GlobeNewswire</a>.
-    Raw data in <code>data/creation.json</code>. Generated 2026-07-03.
+    Raw data in <code>data/creation.json</code>. Updated 2026-08-01.
   </footer>
 </div>
 
@@ -181,9 +181,9 @@ Chart.defaults.font.family="-apple-system,Segoe UI,Roboto,sans-serif";
 Chart.defaults.borderColor="#1e2740";
 
 // ---- Cumulative games (modeled, anchored to 0 @ launch, 75k @ month 9) ----
-const months=["Aug'25","Sep","Oct","Nov","Dec","Jan'26","Feb","Mar","Apr","May","Jun","Jul"];
+const months=["Aug'25","Sep","Oct","Nov","Dec","Jan'26","Feb","Mar","Apr","May","Jun","Jul","Aug"];
 // slight S-curve up to 75k at index 9 (May), then continue at ~4.3k/mo
-const cum=[0,4000,9500,16000,24000,33000,44000,56000,66000,75000,79300,83600];
+const cum=[0,4000,9500,16000,24000,33000,44000,56000,66000,75000,79300,83600,87900];
 new Chart(document.getElementById("chartCumulative"),{
   type:"line",
   data:{labels:months,datasets:[{data:cum,label:"Cumulative games",fill:true,
