@@ -1,108 +1,108 @@
 {
-  "collected": "2026-08-27",
+  "collected": "2026-08-29",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 10,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
-      "title": "Jump For Millions",
-      "creator": "zhenhua.qi",
-      "plays": 3398079,
-      "likes": 62335,
-      "comments": 8882,
-      "remixes": 0,
+      "title": "Hornfish.io",
+      "creator": "SkulHunter",
+      "plays": 1441535,
+      "likes": 18956,
+      "comments": 645,
+      "remixes": 1,
       "isRemix": false,
-      "genre": "Action"
+      "genre": "IO"
     },
     {
-      "title": "SPIDERMAN: Spin-Strike Heroes",
-      "creator": "ardean",
-      "plays": 1529445,
-      "likes": 26289,
-      "comments": 805,
+      "title": "Slash a Brainrot",
+      "creator": "VibeCreAI",
+      "plays": 1046076,
+      "likes": 16644,
+      "comments": 2728,
+      "remixes": 3,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Ultimate 3D Chess",
+      "creator": "blackwidowink",
+      "plays": 604101,
+      "likes": 7463,
+      "comments": 1060,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Puzzle"
+    },
+    {
+      "title": "Firefighter Life",
+      "creator": "AshiF",
+      "plays": 490044,
+      "likes": 4250,
+      "comments": 208,
+      "remixes": 3,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Fire Rescue Run",
+      "creator": "Sturmjager",
+      "plays": 450093,
+      "likes": 6572,
+      "comments": 309,
       "remixes": 1,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "MINECRAFT PORTAL GUN",
+      "creator": "DONYX_FF",
+      "plays": 275687,
+      "likes": 4685,
+      "comments": 251,
+      "remixes": 0,
       "isRemix": true,
       "genre": "Shooter"
     },
     {
-      "title": "DOORS",
-      "creator": "DreamLoop",
-      "plays": 1442482,
-      "likes": 14738,
-      "comments": 3230,
-      "remixes": 135,
+      "title": "Fake or Break",
+      "creator": "Djam",
+      "plays": 245926,
+      "likes": 4209,
+      "comments": 172,
+      "remixes": 2,
       "isRemix": false,
-      "genre": "Adventure"
+      "genre": "Unclassified"
     },
     {
-      "title": "Hornfish.io",
-      "creator": "SkulHunter",
-      "plays": 1386971,
-      "likes": 18313,
-      "comments": 626,
-      "remixes": 1,
-      "isRemix": false,
-      "genre": "IO"
-    },
-    {
-      "title": "GUN CAR: ROCKET RAMPAGE",
-      "creator": "tuanteku",
-      "plays": 941592,
-      "likes": 12534,
-      "comments": 989,
+      "title": "SQUIDGAME: astrocade edition",
+      "creator": "GillDeeKrator",
+      "plays": 61652,
+      "likes": 1482,
+      "comments": 63,
       "remixes": 1,
       "isRemix": true,
-      "genre": "Racing"
+      "genre": "Unclassified"
     },
     {
-      "title": "Narwhal.io",
-      "creator": "Rase",
-      "plays": 657387,
-      "likes": 7914,
-      "comments": 274,
+      "title": "HOLE.IO",
+      "creator": "GreatGeneQuills",
+      "plays": 57533,
+      "likes": 671,
+      "comments": 31,
       "remixes": 0,
       "isRemix": true,
       "genre": "IO"
     },
     {
-      "title": "Minecraft: Snow World",
-      "creator": "SoulsReaper",
-      "plays": 560466,
-      "likes": 5812,
-      "comments": 336,
-      "remixes": 2,
-      "isRemix": true,
-      "genre": "Sandbox"
-    },
-    {
-      "title": "Speed per Step, Keyboard Escape",
-      "creator": "JustJonny",
-      "plays": 424297,
-      "likes": 6844,
-      "comments": 946,
+      "title": "Miner Merge",
+      "creator": "maximtsai",
+      "plays": 5505,
+      "likes": 128,
+      "comments": 5,
       "remixes": 0,
-      "isRemix": false,
-      "genre": "Adventure"
-    },
-    {
-      "title": "World Cup Squad",
-      "creator": "GameNaga",
-      "plays": 255284,
-      "likes": 6313,
-      "comments": 330,
-      "remixes": 1,
       "isRemix": true,
-      "genre": "Sports"
-    },
-    {
-      "title": "🥇 Minecraft: Mars Treasure Hunt",
-      "creator": "Star_astra_",
-      "plays": 146768,
-      "likes": 2929,
-      "comments": 83,
-      "remixes": 2,
-      "isRemix": true,
-      "genre": "Sandbox"
+      "genre": "Merge"
     }
   ]
 }
