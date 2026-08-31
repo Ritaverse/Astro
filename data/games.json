@@ -1,108 +1,108 @@
 {
-  "collected": "2026-08-29",
+  "collected": "2026-08-31",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 10,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
-      "title": "Hornfish.io",
-      "creator": "SkulHunter",
-      "plays": 1441535,
-      "likes": 18956,
-      "comments": 645,
-      "remixes": 1,
+      "title": "Papercut.io",
+      "creator": "blackwidowink",
+      "plays": 8111027,
+      "likes": 84553,
+      "comments": 9887,
+      "remixes": 0,
       "isRemix": false,
       "genre": "IO"
     },
     {
-      "title": "Slash a Brainrot",
-      "creator": "VibeCreAI",
-      "plays": 1046076,
-      "likes": 16644,
-      "comments": 2728,
-      "remixes": 3,
-      "isRemix": false,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Ultimate 3D Chess",
-      "creator": "blackwidowink",
-      "plays": 604101,
-      "likes": 7463,
-      "comments": 1060,
-      "remixes": 0,
-      "isRemix": false,
-      "genre": "Puzzle"
-    },
-    {
-      "title": "Firefighter Life",
-      "creator": "AshiF",
-      "plays": 490044,
-      "likes": 4250,
-      "comments": 208,
-      "remixes": 3,
-      "isRemix": false,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Fire Rescue Run",
-      "creator": "Sturmjager",
-      "plays": 450093,
-      "likes": 6572,
-      "comments": 309,
-      "remixes": 1,
-      "isRemix": false,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "MINECRAFT PORTAL GUN",
-      "creator": "DONYX_FF",
-      "plays": 275687,
-      "likes": 4685,
-      "comments": 251,
-      "remixes": 0,
-      "isRemix": true,
-      "genre": "Shooter"
-    },
-    {
-      "title": "Fake or Break",
-      "creator": "Djam",
-      "plays": 245926,
-      "likes": 4209,
-      "comments": 172,
+      "title": "Obliterate Earth",
+      "creator": "maximtsai",
+      "plays": 2616771,
+      "likes": 38558,
+      "comments": 2224,
       "remixes": 2,
       "isRemix": false,
       "genre": "Unclassified"
     },
     {
-      "title": "SQUIDGAME: astrocade edition",
-      "creator": "GillDeeKrator",
-      "plays": 61652,
-      "likes": 1482,
-      "comments": 63,
-      "remixes": 1,
-      "isRemix": true,
+      "title": "40 Ways to Kill a Zombie",
+      "creator": "Sturmjager",
+      "plays": 1918829,
+      "likes": 26430,
+      "comments": 798,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Shooter"
+    },
+    {
+      "title": "Slash a Brainrot",
+      "creator": "VibeCreAI",
+      "plays": 1095405,
+      "likes": 17506,
+      "comments": 2835,
+      "remixes": 4,
+      "isRemix": false,
       "genre": "Unclassified"
     },
     {
-      "title": "HOLE.IO",
-      "creator": "GreatGeneQuills",
-      "plays": 57533,
-      "likes": 671,
-      "comments": 31,
+      "title": "MINECRAFT:PILOT EDITION",
+      "creator": "DONYX_FF",
+      "plays": 166419,
+      "likes": 2040,
+      "comments": 79,
       "remixes": 0,
       "isRemix": true,
-      "genre": "IO"
+      "genre": "Sandbox"
+    },
+    {
+      "title": "Minecraft luxury museum 🖼️🎨",
+      "creator": "Astra_creator_",
+      "plays": 43946,
+      "likes": 1019,
+      "comments": 51,
+      "remixes": 0,
+      "isRemix": true,
+      "genre": "Sandbox"
     },
     {
       "title": "Miner Merge",
       "creator": "maximtsai",
-      "plays": 5505,
-      "likes": 128,
-      "comments": 5,
+      "plays": 31690,
+      "likes": 697,
+      "comments": 48,
       "remixes": 0,
       "isRemix": true,
       "genre": "Merge"
+    },
+    {
+      "title": "15 Ways To Kill Jason",
+      "creator": "AbduGames",
+      "plays": 30254,
+      "likes": 504,
+      "comments": 14,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Evo-Maze",
+      "creator": "xulunt123",
+      "plays": 5633,
+      "likes": 81,
+      "comments": 2,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Rising of the Shield Hero: The Shield Hero",
+      "creator": "pyromacer",
+      "plays": 2892,
+      "likes": 122,
+      "comments": 21,
+      "remixes": 0,
+      "isRemix": true,
+      "genre": "Unclassified"
     }
   ]
 }
