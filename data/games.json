@@ -1,108 +1,108 @@
 {
-  "collected": "2026-08-31",
+  "collected": "2026-09-01",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 10,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
-      "title": "Papercut.io",
-      "creator": "blackwidowink",
-      "plays": 8111027,
-      "likes": 84553,
-      "comments": 9887,
-      "remixes": 0,
-      "isRemix": false,
-      "genre": "IO"
-    },
-    {
-      "title": "Obliterate Earth",
-      "creator": "maximtsai",
-      "plays": 2616771,
-      "likes": 38558,
-      "comments": 2224,
+      "title": "BLOCKY SNIPER HUNTER",
+      "creator": "Leevai",
+      "plays": 2879219,
+      "likes": 33783,
+      "comments": 2316,
       "remixes": 2,
-      "isRemix": false,
-      "genre": "Action"
-    },
-    {
-      "title": "40 Ways to Kill a Zombie",
-      "creator": "Sturmjager",
-      "plays": 1918829,
-      "likes": 26430,
-      "comments": 798,
-      "remixes": 0,
       "isRemix": false,
       "genre": "Shooter"
     },
     {
-      "title": "Slash a Brainrot",
-      "creator": "VibeCreAI",
-      "plays": 1095405,
-      "likes": 17506,
-      "comments": 2835,
-      "remixes": 4,
+      "title": "Hornfish.io",
+      "creator": "SkulHunter",
+      "plays": 1522834,
+      "likes": 19882,
+      "comments": 679,
+      "remixes": 1,
       "isRemix": false,
-      "genre": "Action"
+      "genre": "IO"
     },
     {
-      "title": "MINECRAFT:PILOT EDITION",
-      "creator": "DONYX_FF",
-      "plays": 166419,
-      "likes": 2040,
-      "comments": 79,
-      "remixes": 0,
-      "isRemix": true,
-      "genre": "Sandbox"
-    },
-    {
-      "title": "Minecraft luxury museum 🖼️🎨",
-      "creator": "Astra_creator_",
-      "plays": 43946,
-      "likes": 1019,
-      "comments": 51,
-      "remixes": 0,
-      "isRemix": true,
-      "genre": "Sandbox"
-    },
-    {
-      "title": "Miner Merge",
-      "creator": "maximtsai",
-      "plays": 31690,
-      "likes": 697,
-      "comments": 48,
+      "title": "Naruto: Merge Heroes",
+      "creator": "Leevai",
+      "plays": 1028961,
+      "likes": 15711,
+      "comments": 1345,
       "remixes": 0,
       "isRemix": true,
       "genre": "Merge"
     },
     {
-      "title": "15 Ways To Kill Jason",
-      "creator": "AbduGames",
-      "plays": 30254,
-      "likes": 504,
-      "comments": 14,
+      "title": "One-Punch 100 Layers",
+      "creator": "FuStudio",
+      "plays": 966015,
+      "likes": 20707,
+      "comments": 2445,
       "remixes": 0,
       "isRemix": false,
-      "genre": "Action"
+      "genre": "Unclassified"
     },
     {
-      "title": "Evo-Maze",
-      "creator": "xulunt123",
-      "plays": 5633,
-      "likes": 81,
+      "title": "TACTICAL STRIKE",
+      "creator": "naz_builds",
+      "plays": 247361,
+      "likes": 3804,
+      "comments": 164,
+      "remixes": 1,
+      "isRemix": true,
+      "genre": "Shooter"
+    },
+    {
+      "title": "Minecraft: Royal Railway Journey 👑🚆",
+      "creator": "Astra_creator_",
+      "plays": 142306,
+      "likes": 2344,
+      "comments": 128,
+      "remixes": 2,
+      "isRemix": true,
+      "genre": "Sandbox"
+    },
+    {
+      "title": "Spider-Link",
+      "creator": "TyoStudio69",
+      "plays": 49812,
+      "likes": 756,
+      "comments": 41,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Minecraft Gun City",
+      "creator": "urazim",
+      "plays": 25037,
+      "likes": 297,
+      "comments": 8,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "Shooter"
+    },
+    {
+      "title": "Astro World 3D",
+      "creator": "ardianion",
+      "plays": 17643,
+      "likes": 418,
+      "comments": 16,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Adventure"
+    },
+    {
+      "title": "Grow Animal",
+      "creator": "tupakiin",
+      "plays": 2233,
+      "likes": 45,
       "comments": 2,
       "remixes": 0,
       "isRemix": false,
-      "genre": "Puzzle"
-    },
-    {
-      "title": "Rising of the Shield Hero: The Shield Hero",
-      "creator": "pyromacer",
-      "plays": 2892,
-      "likes": 122,
-      "comments": 21,
-      "remixes": 0,
-      "isRemix": true,
-      "genre": "RPG"
+      "genre": "Unclassified"
     }
   ]
 }
