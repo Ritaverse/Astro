@@ -1,108 +1,108 @@
 {
-  "collected": "2026-09-05",
+  "collected": "2026-09-07",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 10,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
-      "title": "Mansion Merge",
-      "creator": "maximtsai",
-      "plays": 2349734,
-      "likes": 46702,
-      "comments": 2765,
-      "remixes": 1,
+      "title": "Smash the Dummy",
+      "creator": "zhenhua.qi",
+      "plays": 10886329,
+      "likes": 81242,
+      "comments": 7962,
+      "remixes": 0,
       "isRemix": false,
-      "genre": "Merge"
+      "genre": "Action"
     },
     {
-      "title": "Era.io",
+      "title": "Speed Per Step",
       "creator": "archeologist",
-      "plays": 2192701,
-      "likes": 36286,
-      "comments": 3007,
-      "remixes": 1,
+      "plays": 4197601,
+      "likes": 79391,
+      "comments": 19362,
+      "remixes": 0,
       "isRemix": false,
-      "genre": "IO"
+      "genre": "Unclassified"
     },
     {
       "title": "SPIDERMAN: Spin-Strike Heroes",
       "creator": "ardean",
-      "plays": 2109253,
-      "likes": 35107,
-      "comments": 1170,
+      "plays": 2269754,
+      "likes": 37182,
+      "comments": 1243,
       "remixes": 1,
       "isRemix": true,
       "genre": "Shooter"
     },
     {
-      "title": "Build a Ride ’n’ Pull a Stunt",
-      "creator": "JustJonny",
-      "plays": 1084978,
-      "likes": 15954,
-      "comments": 698,
-      "remixes": 9,
+      "title": "World Cup Squad",
+      "creator": "GameNaga",
+      "plays": 594926,
+      "likes": 13455,
+      "comments": 885,
+      "remixes": 1,
       "isRemix": true,
-      "genre": "Sandbox"
+      "genre": "Sports"
     },
     {
-      "title": "Crab Game",
-      "creator": "TyoStudio69",
-      "plays": 460988,
-      "likes": 7774,
-      "comments": 990,
-      "remixes": 0,
-      "isRemix": false,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Raptor Island",
-      "creator": "ardianion",
-      "plays": 276440,
-      "likes": 4738,
-      "comments": 128,
-      "remixes": 0,
-      "isRemix": false,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "SUPER POWER X MINECRAFT",
-      "creator": "Shadab",
-      "plays": 235228,
-      "likes": 5265,
-      "comments": 256,
-      "remixes": 0,
-      "isRemix": true,
-      "genre": "Sandbox"
-    },
-    {
-      "title": "Flying Hero: Astro Town",
-      "creator": "FunCo",
-      "plays": 158506,
-      "likes": 1677,
-      "comments": 45,
+      "title": "Minecraft Gun City",
+      "creator": "urazim",
+      "plays": 213183,
+      "likes": 2628,
+      "comments": 61,
       "remixes": 2,
       "isRemix": false,
+      "genre": "Shooter"
+    },
+    {
+      "title": "Minecraft",
+      "creator": "AhmadGaming_09",
+      "plays": 122525,
+      "likes": 3064,
+      "comments": 324,
+      "remixes": 25,
+      "isRemix": true,
+      "genre": "Sandbox"
+    },
+    {
+      "title": "Grow Animal",
+      "creator": "tupakiin",
+      "plays": 107941,
+      "likes": 2256,
+      "comments": 170,
+      "remixes": 0,
+      "isRemix": true,
       "genre": "Unclassified"
     },
     {
-      "title": "Steal an egg",
-      "creator": "JustJonny",
-      "plays": 35022,
-      "likes": 708,
-      "comments": 78,
+      "title": "Monster.io",
+      "creator": "FuStudio",
+      "plays": 76526,
+      "likes": 1224,
+      "comments": 34,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "IO"
+    },
+    {
+      "title": "CRYSTAL MOUNTAIN",
+      "creator": "ardianion",
+      "plays": 41664,
+      "likes": 814,
+      "comments": 32,
       "remixes": 0,
       "isRemix": false,
       "genre": "Unclassified"
     },
     {
-      "title": "Minecraft Panda Mod",
-      "creator": "Shadab",
-      "plays": 22727,
-      "likes": 348,
-      "comments": 19,
-      "remixes": 0,
+      "title": "Steal An Egg",
+      "creator": "Laxci",
+      "plays": 39033,
+      "likes": 794,
+      "comments": 81,
+      "remixes": 1,
       "isRemix": true,
-      "genre": "Sandbox"
+      "genre": "Unclassified"
     }
   ]
 }
