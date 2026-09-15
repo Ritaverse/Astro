@@ -1,108 +1,108 @@
 {
-  "collected": "2026-09-13",
+  "collected": "2026-09-15",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 10,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
-      "title": "Obliterate Earth",
-      "creator": "maximtsai",
-      "plays": 2993600,
-      "likes": 43004,
-      "comments": 2499,
-      "remixes": 2,
-      "isRemix": false,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Snake Rush 3D",
-      "creator": "SuperL",
-      "plays": 1084111,
-      "likes": 12229,
-      "comments": 532,
+      "title": "World Cup Legends",
+      "creator": "Majisok",
+      "plays": 3358144,
+      "likes": 74950,
+      "comments": 8102,
       "remixes": 1,
       "isRemix": false,
-      "genre": "Action"
+      "genre": "Sports"
     },
     {
-      "title": "Monster Smash 3D",
-      "creator": "AbduGames",
-      "plays": 389784,
-      "likes": 4671,
-      "comments": 117,
-      "remixes": 0,
-      "isRemix": true,
-      "genre": "Action"
+      "title": "Era.io",
+      "creator": "archeologist",
+      "plays": 2316983,
+      "likes": 38238,
+      "comments": 3181,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "IO"
     },
     {
-      "title": "Cosmic Crunch",
-      "creator": "badianbanl",
-      "plays": 327410,
-      "likes": 5865,
-      "comments": 326,
-      "remixes": 2,
-      "isRemix": true,
+      "title": "Crab Game",
+      "creator": "TyoStudio69",
+      "plays": 1894407,
+      "likes": 28690,
+      "comments": 3869,
+      "remixes": 9,
+      "isRemix": false,
       "genre": "Unclassified"
     },
     {
-      "title": "Squid game",
-      "creator": "AhmadGaming",
-      "plays": 313085,
-      "likes": 5947,
-      "comments": 383,
+      "title": "Minecraft welcome back to your old school",
+      "creator": "Astra_creator_",
+      "plays": 368617,
+      "likes": 6678,
+      "comments": 439,
+      "remixes": 0,
+      "isRemix": true,
+      "genre": "Sandbox"
+    },
+    {
+      "title": "Football Tycoon Ultimate",
+      "creator": "Sense1",
+      "plays": 363476,
+      "likes": 7462,
+      "comments": 737,
+      "remixes": 3,
+      "isRemix": true,
+      "genre": "Sports"
+    },
+    {
+      "title": "Steal an egg",
+      "creator": "JustJonny",
+      "plays": 338035,
+      "likes": 6318,
+      "comments": 732,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "ROBLOX PICKAXE SWING ESCAPE",
+      "creator": "Leevai",
+      "plays": 255438,
+      "likes": 6030,
+      "comments": 657,
+      "remixes": 4,
+      "isRemix": true,
+      "genre": "Adventure"
+    },
+    {
+      "title": "Minecraft ultimate realistic",
+      "creator": "Shemen",
+      "plays": 224775,
+      "likes": 2845,
+      "comments": 178,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Sandbox"
+    },
+    {
+      "title": "Steal An Egg",
+      "creator": "Laxci",
+      "plays": 196447,
+      "likes": 4038,
+      "comments": 324,
       "remixes": 3,
       "isRemix": true,
       "genre": "Unclassified"
     },
     {
-      "title": "Steal An Egg",
-      "creator": "Laxci",
-      "plays": 198395,
-      "likes": 3856,
-      "comments": 336,
-      "remixes": 6,
+      "title": "Astro Adventure Park 3D",
+      "creator": "yashirxshaikh",
+      "plays": 142910,
+      "likes": 3101,
+      "comments": 169,
+      "remixes": 3,
       "isRemix": true,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "+1 SUPERHERO EVOLUTION",
-      "creator": "AhmadGaming",
-      "plays": 53361,
-      "likes": 1342,
-      "comments": 56,
-      "remixes": 2,
-      "isRemix": true,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Astro Guys",
-      "creator": "dantg",
-      "plays": 50638,
-      "likes": 1079,
-      "comments": 73,
-      "remixes": 0,
-      "isRemix": false,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "squid game",
-      "creator": "Manahilqasim",
-      "plays": 35244,
-      "likes": 1001,
-      "comments": 55,
-      "remixes": 1,
-      "isRemix": false,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Minecraft police headquarter",
-      "creator": "Astra_creator_",
-      "plays": 20650,
-      "likes": 647,
-      "comments": 32,
-      "remixes": 0,
-      "isRemix": true,
-      "genre": "Sandbox"
+      "genre": "Adventure"
     }
   ]
 }
