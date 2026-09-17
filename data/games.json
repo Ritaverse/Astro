@@ -1,108 +1,108 @@
 {
-  "collected": "2026-09-15",
+  "collected": "2026-09-17",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 10,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
-      "title": "World Cup Legends",
-      "creator": "Majisok",
-      "plays": 3358144,
-      "likes": 74950,
-      "comments": 8102,
-      "remixes": 1,
-      "isRemix": false,
-      "genre": "Sports"
-    },
-    {
       "title": "Era.io",
       "creator": "archeologist",
-      "plays": 2316983,
-      "likes": 38238,
-      "comments": 3181,
+      "plays": 2340753,
+      "likes": 38630,
+      "comments": 3204,
       "remixes": 1,
       "isRemix": false,
       "genre": "IO"
     },
     {
-      "title": "Crab Game",
-      "creator": "TyoStudio69",
-      "plays": 1894407,
-      "likes": 28690,
-      "comments": 3869,
-      "remixes": 9,
+      "title": "Snake Rush 3D",
+      "creator": "SuperL",
+      "plays": 1712557,
+      "likes": 18018,
+      "comments": 869,
+      "remixes": 1,
       "isRemix": false,
-      "genre": "Unclassified"
+      "genre": "Action"
     },
     {
-      "title": "Minecraft welcome back to your old school",
-      "creator": "Astra_creator_",
-      "plays": 368617,
-      "likes": 6678,
-      "comments": 439,
-      "remixes": 0,
+      "title": "Narwhal.io",
+      "creator": "RaseGames",
+      "plays": 1376225,
+      "likes": 15235,
+      "comments": 608,
+      "remixes": 1,
       "isRemix": true,
-      "genre": "Sandbox"
-    },
-    {
-      "title": "Football Tycoon Ultimate",
-      "creator": "Sense1",
-      "plays": 363476,
-      "likes": 7462,
-      "comments": 737,
-      "remixes": 3,
-      "isRemix": true,
-      "genre": "Sports"
-    },
-    {
-      "title": "Steal an egg",
-      "creator": "JustJonny",
-      "plays": 338035,
-      "likes": 6318,
-      "comments": 732,
-      "remixes": 0,
-      "isRemix": false,
-      "genre": "Unclassified"
+      "genre": "IO"
     },
     {
       "title": "ROBLOX PICKAXE SWING ESCAPE",
       "creator": "Leevai",
-      "plays": 255438,
-      "likes": 6030,
-      "comments": 657,
+      "plays": 319185,
+      "likes": 7442,
+      "comments": 793,
       "remixes": 4,
       "isRemix": true,
       "genre": "Adventure"
     },
     {
-      "title": "Minecraft ultimate realistic",
-      "creator": "Shemen",
-      "plays": 224775,
-      "likes": 2845,
-      "comments": 178,
-      "remixes": 0,
-      "isRemix": false,
-      "genre": "Sandbox"
-    },
-    {
       "title": "Steal An Egg",
       "creator": "Laxci",
-      "plays": 196447,
-      "likes": 4038,
-      "comments": 324,
-      "remixes": 3,
+      "plays": 309828,
+      "likes": 6186,
+      "comments": 553,
+      "remixes": 6,
       "isRemix": true,
       "genre": "Unclassified"
     },
     {
-      "title": "Astro Adventure Park 3D",
-      "creator": "yashirxshaikh",
-      "plays": 142910,
-      "likes": 3101,
-      "comments": 169,
-      "remixes": 3,
+      "title": "Cosmic Crunch",
+      "creator": "badianbanl",
+      "plays": 280356,
+      "likes": 4526,
+      "comments": 340,
+      "remixes": 0,
       "isRemix": true,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Astro World 3D",
+      "creator": "ardianion",
+      "plays": 273488,
+      "likes": 5657,
+      "comments": 178,
+      "remixes": 91,
+      "isRemix": false,
       "genre": "Adventure"
+    },
+    {
+      "title": "RAGE UNLEASHED: Green Rampage",
+      "creator": "GillDeeKrator",
+      "plays": 71729,
+      "likes": 1199,
+      "comments": 26,
+      "remixes": 0,
+      "isRemix": true,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Jump to collect football legends",
+      "creator": "JustJonny",
+      "plays": 36265,
+      "likes": 921,
+      "comments": 89,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Sports"
+    },
+    {
+      "title": "Minecraft Corporate Tower ⭐",
+      "creator": "Astra_creator_",
+      "plays": 36094,
+      "likes": 1011,
+      "comments": 93,
+      "remixes": 0,
+      "isRemix": true,
+      "genre": "Sandbox"
     }
   ]
 }
