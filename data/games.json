@@ -1,5 +1,5 @@
 {
-  "collected": "2026-09-29",
+  "collected": "2026-10-01",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 10,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
@@ -12,7 +12,7 @@
       "comments": 7686,
       "remixes": 11,
       "isRemix": false,
-      "genre": "Unclassified"
+      "genre": "Action"
     },
     {
       "title": "Barbie & Ken: Dream Date Stylist",
@@ -22,7 +22,7 @@
       "comments": 588,
       "remixes": 2,
       "isRemix": false,
-      "genre": "Adventure"
+      "genre": "Casual"
     },
     {
       "title": "Crowd Rush",
@@ -52,7 +52,7 @@
       "comments": 215,
       "remixes": 5,
       "isRemix": true,
-      "genre": "Unclassified"
+      "genre": "Hyper-casual"
     },
     {
       "title": "Minecraft Flatworld",
@@ -72,7 +72,7 @@
       "comments": 112,
       "remixes": 0,
       "isRemix": false,
-      "genre": "Unclassified"
+      "genre": "Hyper-casual"
     },
     {
       "title": "Shuriken.io",
@@ -92,7 +92,7 @@
       "comments": 168,
       "remixes": 2,
       "isRemix": true,
-      "genre": "Unclassified"
+      "genre": "Casual"
     },
     {
       "title": "Jump To Steal An Egg",
