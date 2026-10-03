@@ -1,107 +1,57 @@
 {
-  "collected": "2026-10-01",
+  "collected": "2026-10-03",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
-  "count": 10,
+  "count": 5,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
-      "title": "Snake Rush 3D",
-      "creator": "SuperL",
-      "plays": 3295607,
-      "likes": 31160,
-      "comments": 1845,
-      "remixes": 5,
-      "isRemix": false,
-      "genre": "Action"
-    },
-    {
-      "title": "Steal an Egg",
-      "creator": "Laxci",
-      "plays": 1414157,
-      "likes": 25247,
-      "comments": 2026,
-      "remixes": 6,
-      "isRemix": false,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Steal An Egg",
-      "creator": "Laxci",
-      "plays": 955980,
-      "likes": 19075,
-      "comments": 1716,
-      "remixes": 3,
-      "isRemix": true,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Steal an egg",
-      "creator": "JustJonny",
-      "plays": 771990,
-      "likes": 14236,
-      "comments": 1507,
+      "title": "40 Ways to Kill a Zombie",
+      "creator": "Sturmjager",
+      "plays": 2633777,
+      "likes": 35968,
+      "comments": 1092,
       "remixes": 0,
       "isRemix": false,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "ROBLOX PICKAXE SWING ESCAPE",
-      "creator": "Leevai",
-      "plays": 614041,
-      "likes": 13600,
-      "comments": 1283,
-      "remixes": 4,
-      "isRemix": true,
-      "genre": "Adventure"
-    },
-    {
-      "title": "CRYSTAL MOUNTAIN",
-      "creator": "ardianion",
-      "plays": 235590,
-      "likes": 4155,
-      "comments": 149,
-      "remixes": 0,
-      "isRemix": false,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Steal A Pet",
-      "creator": "Tupakiin",
-      "plays": 164525,
-      "likes": 5001,
-      "comments": 418,
-      "remixes": 2,
-      "isRemix": true,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Minecraft GRAVITY GUN",
-      "creator": "DONYX_FF",
-      "plays": 159266,
-      "likes": 2250,
-      "comments": 124,
-      "remixes": 1,
-      "isRemix": true,
       "genre": "Shooter"
     },
     {
-      "title": "Steal A Anime",
-      "creator": "Tupakiin",
-      "plays": 142953,
-      "likes": 3214,
-      "comments": 214,
-      "remixes": 2,
-      "isRemix": true,
-      "genre": "Casual"
+      "title": "Hornfish.io",
+      "creator": "SkulHunter",
+      "plays": 1993907,
+      "likes": 24746,
+      "comments": 883,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "IO"
     },
     {
-      "title": "BIKERACER GP",
-      "creator": "MAT_GAMER",
-      "plays": 57557,
-      "likes": 864,
-      "comments": 44,
+      "title": "BEN 10 OPEN World",
+      "creator": "GenGames",
+      "plays": 729246,
+      "likes": 13408,
+      "comments": 367,
+      "remixes": 7,
+      "isRemix": false,
+      "genre": "Adventure"
+    },
+    {
+      "title": "Jump to collect football legends",
+      "creator": "JustJonny",
+      "plays": 338087,
+      "likes": 7216,
+      "comments": 418,
       "remixes": 0,
       "isRemix": false,
+      "genre": "Sports"
+    },
+    {
+      "title": "Shinobi Dominion",
+      "creator": "badianbanl",
+      "plays": 83017,
+      "likes": 1566,
+      "comments": 71,
+      "remixes": 1,
+      "isRemix": true,
       "genre": "Unclassified"
     }
   ]
