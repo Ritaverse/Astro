@@ -1,57 +1,57 @@
 {
-  "collected": "2026-10-05",
+  "collected": "2026-10-07",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 5,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
+      "title": "The journey begins",
+      "creator": "DeathBlast",
+      "plays": 1935356,
+      "likes": 27118,
+      "comments": 1627,
+      "remixes": 0,
+      "isRemix": true,
+      "genre": "Adventure"
+    },
+    {
       "title": "TACTICAL STRIKE",
       "creator": "naz_builds",
-      "plays": 1600557,
-      "likes": 22437,
-      "comments": 1308,
+      "plays": 1639645,
+      "likes": 22931,
+      "comments": 1325,
       "remixes": 6,
       "isRemix": true,
       "genre": "Shooter"
     },
     {
-      "title": "Pickaxe Swing Escape",
-      "creator": "Laxci",
-      "plays": 351723,
-      "likes": 8304,
-      "comments": 450,
+      "title": "INDONESIAN STREET FOOD : COOKING SIMULATOR 🇮🇩🍳",
+      "creator": "Sinon",
+      "plays": 295302,
+      "likes": 5858,
+      "comments": 358,
       "remixes": 2,
-      "isRemix": true,
-      "genre": "Adventure"
+      "isRemix": false,
+      "genre": "Simulation"
     },
     {
-      "title": "Blade Evolve",
-      "creator": "Dark_GG",
-      "plays": 286774,
-      "likes": 4884,
-      "comments": 409,
+      "title": "The Last Hero",
+      "creator": "FuStudio",
+      "plays": 204512,
+      "likes": 3661,
+      "comments": 53,
       "remixes": 0,
       "isRemix": false,
       "genre": "Unclassified"
     },
     {
-      "title": "CRYSTAL MOUNTAIN",
-      "creator": "ardianion",
-      "plays": 281724,
-      "likes": 4876,
-      "comments": 179,
-      "remixes": 0,
+      "title": "Squid game",
+      "creator": "CreaterXStudio",
+      "plays": 193993,
+      "likes": 5332,
+      "comments": 187,
+      "remixes": 4,
       "isRemix": false,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Shinobi Dominion",
-      "creator": "badianbanl",
-      "plays": 131925,
-      "likes": 2327,
-      "comments": 105,
-      "remixes": 2,
-      "isRemix": true,
       "genre": "Unclassified"
     }
   ]
