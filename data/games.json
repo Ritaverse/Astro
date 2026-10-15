@@ -1,57 +1,57 @@
 {
-  "collected": "2026-10-13",
+  "collected": "2026-10-15",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 5,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
-      "title": "The journey begins",
-      "creator": "DeathBlast",
-      "plays": 2052501,
-      "likes": 28506,
-      "comments": 1714,
-      "remixes": 0,
-      "isRemix": true,
-      "genre": "Adventure"
+      "title": "Shuriken.io",
+      "creator": "SkulHunter",
+      "plays": 630620,
+      "likes": 6731,
+      "comments": 177,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "IO"
     },
     {
-      "title": "Omnitrix City",
-      "creator": "Pikaa.Pi",
-      "plays": 604736,
-      "likes": 9664,
-      "comments": 247,
-      "remixes": 0,
+      "title": "Barbie Care Clinic",
+      "creator": "LegendaryBlitz",
+      "plays": 389953,
+      "likes": 5929,
+      "comments": 455,
+      "remixes": 1,
+      "isRemix": true,
+      "genre": "Casual"
+    },
+    {
+      "title": "Shadow Hero",
+      "creator": "IsEGG",
+      "plays": 357169,
+      "likes": 5991,
+      "comments": 145,
+      "remixes": 2,
       "isRemix": true,
       "genre": "Unclassified"
     },
     {
-      "title": "Speed per Step +1",
-      "creator": "JustJonny",
-      "plays": 539958,
-      "likes": 9110,
-      "comments": 1170,
+      "title": "Spin Master",
+      "creator": "astro3006",
+      "plays": 149464,
+      "likes": 4316,
+      "comments": 125,
       "remixes": 0,
       "isRemix": false,
       "genre": "Unclassified"
     },
     {
-      "title": "INDONESIAN STREET FOOD : COOKING SIMULATOR 🇮🇩🍳",
-      "creator": "Sinon",
-      "plays": 473160,
-      "likes": 8826,
-      "comments": 594,
-      "remixes": 2,
+      "title": "Saiyan Obby",
+      "creator": "ProbablyWorks",
+      "plays": 82789,
+      "likes": 1839,
+      "comments": 80,
+      "remixes": 0,
       "isRemix": false,
-      "genre": "Simulation"
-    },
-    {
-      "title": "+1 rail for millions",
-      "creator": "Killerdrone",
-      "plays": 81147,
-      "likes": 1900,
-      "comments": 242,
-      "remixes": 2,
-      "isRemix": true,
       "genre": "Unclassified"
     }
   ]
