@@ -1,57 +1,57 @@
 {
-  "collected": "2026-10-15",
+  "collected": "2026-10-17",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 5,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
-      "title": "Shuriken.io",
-      "creator": "SkulHunter",
-      "plays": 630620,
-      "likes": 6731,
-      "comments": 177,
-      "remixes": 1,
-      "isRemix": false,
-      "genre": "IO"
-    },
-    {
-      "title": "Barbie Care Clinic",
-      "creator": "LegendaryBlitz",
-      "plays": 389953,
-      "likes": 5929,
-      "comments": 455,
-      "remixes": 1,
-      "isRemix": true,
-      "genre": "Casual"
-    },
-    {
-      "title": "Shadow Hero",
-      "creator": "IsEGG",
-      "plays": 357169,
-      "likes": 5991,
-      "comments": 145,
-      "remixes": 2,
-      "isRemix": true,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Spin Master",
-      "creator": "astro3006",
-      "plays": 149464,
-      "likes": 4316,
-      "comments": 125,
+      "title": "The journey begins",
+      "creator": "DeathBlast",
+      "plays": 2118166,
+      "likes": 29262,
+      "comments": 1740,
       "remixes": 0,
-      "isRemix": false,
-      "genre": "Unclassified"
+      "isRemix": true,
+      "genre": "Adventure"
     },
     {
-      "title": "Saiyan Obby",
+      "title": "Taming Dragons",
       "creator": "ProbablyWorks",
-      "plays": 82789,
-      "likes": 1839,
-      "comments": 80,
+      "plays": 465310,
+      "likes": 8663,
+      "comments": 354,
       "remixes": 0,
       "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Shinobi Dominion",
+      "creator": "badianbanl",
+      "plays": 353454,
+      "likes": 5594,
+      "comments": 230,
+      "remixes": 4,
+      "isRemix": true,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "STRAIN",
+      "creator": "phaserush5",
+      "plays": 342225,
+      "likes": 5346,
+      "comments": 230,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Ride A Pet",
+      "creator": "Laxci",
+      "plays": 206458,
+      "likes": 6143,
+      "comments": 169,
+      "remixes": 1,
+      "isRemix": true,
       "genre": "Unclassified"
     }
   ]
