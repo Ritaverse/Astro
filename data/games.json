@@ -1,58 +1,58 @@
 {
-  "collected": "2026-10-17",
+  "collected": "2026-10-19",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 5,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
-      "title": "The journey begins",
-      "creator": "DeathBlast",
-      "plays": 2118166,
-      "likes": 29262,
-      "comments": 1740,
-      "remixes": 0,
-      "isRemix": true,
-      "genre": "Adventure"
-    },
-    {
-      "title": "Taming Dragons",
-      "creator": "ProbablyWorks",
-      "plays": 465310,
-      "likes": 8663,
-      "comments": 354,
-      "remixes": 0,
+      "title": "Papercut.io",
+      "creator": "blackwidowink",
+      "plays": 11085263,
+      "likes": 113815,
+      "comments": 12996,
+      "remixes": 2,
       "isRemix": false,
-      "genre": "Unclassified"
+      "genre": "IO"
     },
     {
-      "title": "Shinobi Dominion",
-      "creator": "badianbanl",
-      "plays": 353454,
-      "likes": 5594,
-      "comments": 230,
-      "remixes": 4,
-      "isRemix": true,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "STRAIN",
-      "creator": "phaserush5",
-      "plays": 342225,
-      "likes": 5346,
-      "comments": 230,
-      "remixes": 0,
-      "isRemix": false,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Ride A Pet",
+      "title": "Steal An Egg",
       "creator": "Laxci",
-      "plays": 206458,
-      "likes": 6143,
-      "comments": 169,
+      "plays": 947289,
+      "likes": 19257,
+      "comments": 1530,
+      "remixes": 6,
+      "isRemix": true,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Steal an egg",
+      "creator": "Echo_x",
+      "plays": 330501,
+      "likes": 7041,
+      "comments": 489,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Camp Rush",
+      "creator": "CrazyHaribo",
+      "plays": 235529,
+      "likes": 3825,
+      "comments": 128,
+      "remixes": 1,
+      "isRemix": false,
+      "genre": "Action"
+    },
+    {
+      "title": "MINECRAFT CREATION WORLD",
+      "creator": "Mystasx",
+      "plays": 58852,
+      "likes": 762,
+      "comments": 31,
       "remixes": 1,
       "isRemix": true,
-      "genre": "Unclassified"
+      "genre": "Sandbox"
     }
   ]
 }
