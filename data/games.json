@@ -1,58 +1,58 @@
 {
-  "collected": "2026-10-19",
+  "collected": "2026-10-21",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 5,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
-      "title": "Papercut.io",
-      "creator": "blackwidowink",
-      "plays": 11085263,
-      "likes": 113815,
-      "comments": 12996,
-      "remixes": 2,
-      "isRemix": false,
-      "genre": "IO"
-    },
-    {
-      "title": "Steal An Egg",
-      "creator": "Laxci",
-      "plays": 947289,
-      "likes": 19257,
-      "comments": 1530,
-      "remixes": 6,
+      "title": "Omnitrix City",
+      "creator": "Pikaa.Pi",
+      "plays": 923907,
+      "likes": 14457,
+      "comments": 371,
+      "remixes": 0,
       "isRemix": true,
       "genre": "Unclassified"
     },
     {
-      "title": "Steal an egg",
-      "creator": "Echo_x",
-      "plays": 330501,
-      "likes": 7041,
-      "comments": 489,
-      "remixes": 1,
+      "title": "STRAIN",
+      "creator": "phaserush5",
+      "plays": 515837,
+      "likes": 7682,
+      "comments": 369,
+      "remixes": 0,
       "isRemix": false,
       "genre": "Unclassified"
     },
     {
       "title": "Camp Rush",
       "creator": "CrazyHaribo",
-      "plays": 235529,
-      "likes": 3825,
-      "comments": 128,
+      "plays": 298888,
+      "likes": 4734,
+      "comments": 136,
       "remixes": 1,
       "isRemix": false,
       "genre": "Action"
     },
     {
-      "title": "MINECRAFT CREATION WORLD",
-      "creator": "Mystasx",
-      "plays": 58852,
-      "likes": 762,
-      "comments": 31,
-      "remixes": 1,
+      "title": "KICK A LUCKY BLOCK FOR PETS",
+      "creator": "denden",
+      "plays": 131084,
+      "likes": 3326,
+      "comments": 148,
+      "remixes": 0,
       "isRemix": true,
-      "genre": "Sandbox"
+      "genre": "Sports"
+    },
+    {
+      "title": "Byte Hunters",
+      "creator": "ProbablyWorks",
+      "plays": 113500,
+      "likes": 2642,
+      "comments": 57,
+      "remixes": 0,
+      "isRemix": true,
+      "genre": "Unclassified"
     }
   ]
 }
