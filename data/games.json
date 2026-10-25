@@ -1,58 +1,58 @@
 {
-  "collected": "2026-10-23",
+  "collected": "2026-10-25",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 5,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
-      "title": "run for egg",
-      "creator": "AhmadShah",
-      "plays": 538919,
-      "likes": 10040,
-      "comments": 866,
-      "remixes": 6,
-      "isRemix": true,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Steal an egg",
-      "creator": "Echo_x",
-      "plays": 486212,
-      "likes": 10075,
-      "comments": 838,
+      "title": "Shuriken.io",
+      "creator": "SkulHunter",
+      "plays": 895038,
+      "likes": 9321,
+      "comments": 260,
       "remixes": 1,
       "isRemix": false,
+      "genre": "IO"
+    },
+    {
+      "title": "Kpop Girls: Stage Comeback Stylist",
+      "creator": "LegendaryBlitz",
+      "plays": 717885,
+      "likes": 17042,
+      "comments": 1705,
+      "remixes": 0,
+      "isRemix": true,
       "genre": "Unclassified"
     },
     {
-      "title": "Harpoon Harbor",
-      "creator": "CrazyHaribo",
-      "plays": 403095,
-      "likes": 6936,
-      "comments": 232,
+      "title": "Robo-Crash",
+      "creator": "Dhrupesh09",
+      "plays": 686450,
+      "likes": 7361,
+      "comments": 219,
       "remixes": 0,
       "isRemix": false,
       "genre": "Unclassified"
     },
     {
-      "title": "+1 rail for millions",
-      "creator": "Killerdrone",
-      "plays": 348066,
-      "likes": 7814,
-      "comments": 799,
-      "remixes": 4,
-      "isRemix": true,
+      "title": "Giant Salami Factory",
+      "creator": "CrazyHaribo",
+      "plays": 171799,
+      "likes": 3300,
+      "comments": 121,
+      "remixes": 0,
+      "isRemix": false,
       "genre": "Unclassified"
     },
     {
-      "title": "ZOMBIES VS HUMANS",
-      "creator": "Leevai",
-      "plays": 158172,
-      "likes": 3510,
-      "comments": 186,
+      "title": "Gym Rat Rumble",
+      "creator": "ProbablyWorks",
+      "plays": 130993,
+      "likes": 3248,
+      "comments": 129,
       "remixes": 0,
-      "isRemix": true,
-      "genre": "Unclassified"
+      "isRemix": false,
+      "genre": "Adventure"
     }
   ]
 }
