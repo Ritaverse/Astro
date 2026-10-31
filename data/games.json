@@ -1,58 +1,58 @@
 {
-  "collected": "2026-10-29",
+  "collected": "2026-10-31",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 5,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
-      "title": "Snake Rush 3D",
-      "creator": "SuperL",
-      "plays": 4409495,
-      "likes": 40289,
-      "comments": 2311,
-      "remixes": 10,
-      "isRemix": false,
-      "genre": "Action"
-    },
-    {
-      "title": "Shuriken.io",
-      "creator": "SkulHunter",
-      "plays": 964020,
-      "likes": 10025,
-      "comments": 285,
-      "remixes": 1,
-      "isRemix": false,
-      "genre": "IO"
-    },
-    {
       "title": "Slap and steal famous cars",
       "creator": "JustJonny",
-      "plays": 927600,
-      "likes": 11155,
-      "comments": 467,
+      "plays": 1027646,
+      "likes": 12311,
+      "comments": 523,
       "remixes": 0,
       "isRemix": false,
       "genre": "Unclassified"
     },
     {
-      "title": "ZOMBIES VS HUMANS",
-      "creator": "Leevai",
-      "plays": 366608,
-      "likes": 7823,
-      "comments": 390,
+      "title": "STRAIN",
+      "creator": "phaserush5",
+      "plays": 919981,
+      "likes": 13334,
+      "comments": 641,
       "remixes": 0,
-      "isRemix": true,
+      "isRemix": false,
       "genre": "Unclassified"
     },
     {
-      "title": "BRICK RUSH",
-      "creator": "kx2",
-      "plays": 85703,
-      "likes": 1943,
-      "comments": 96,
-      "remixes": 3,
-      "isRemix": true,
-      "genre": "Action"
+      "title": "Natural Disaster Survival",
+      "creator": "Voxels",
+      "plays": 511110,
+      "likes": 10000,
+      "comments": 808,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Harvest Mart",
+      "creator": "InfiniteGames",
+      "plays": 223709,
+      "likes": 4246,
+      "comments": 278,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Climb for Animal Eggs",
+      "creator": "Echo_x",
+      "plays": 173345,
+      "likes": 3780,
+      "comments": 181,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
     }
   ]
 }
