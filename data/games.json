@@ -1,58 +1,58 @@
 {
-  "collected": "2026-11-01",
+  "collected": "2026-11-03",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 5,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
-      "title": "Fly for Brainrots",
-      "creator": "VibeCreAI",
-      "plays": 1815866,
-      "likes": 32022,
-      "comments": 1896,
-      "remixes": 2,
-      "isRemix": true,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Slap and steal famous cars",
-      "creator": "JustJonny",
-      "plays": 1075289,
-      "likes": 12879,
-      "comments": 554,
+      "title": "STRAIN",
+      "creator": "phaserush5",
+      "plays": 1028931,
+      "likes": 14739,
+      "comments": 709,
       "remixes": 0,
       "isRemix": false,
       "genre": "Unclassified"
     },
     {
-      "title": "+1 rail for millions",
-      "creator": "Killerdrone",
-      "plays": 555484,
-      "likes": 13065,
-      "comments": 1265,
-      "remixes": 4,
+      "title": "+1 rizz for millions",
+      "creator": "cardsharkg",
+      "plays": 700493,
+      "likes": 12916,
+      "comments": 547,
+      "remixes": 6,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Shinobi Dominion",
+      "creator": "badianbanl",
+      "plays": 565374,
+      "likes": 8705,
+      "comments": 355,
+      "remixes": 5,
       "isRemix": true,
       "genre": "Unclassified"
     },
     {
-      "title": "ZOMBIES VS HUMANS",
-      "creator": "Leevai",
-      "plays": 458346,
-      "likes": 9640,
-      "comments": 490,
-      "remixes": 0,
-      "isRemix": true,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Frost Arrow Fishery",
+      "title": "Ice River Rush",
       "creator": "CrazyHaribo",
-      "plays": 202107,
-      "likes": 3423,
-      "comments": 181,
+      "plays": 508124,
+      "likes": 8436,
+      "comments": 304,
       "remixes": 0,
       "isRemix": false,
-      "genre": "Unclassified"
+      "genre": "Action"
+    },
+    {
+      "title": "Minecraft  prison life 2.0",
+      "creator": "astra_creator_",
+      "plays": 154665,
+      "likes": 3475,
+      "comments": 226,
+      "remixes": 3,
+      "isRemix": true,
+      "genre": "Sandbox"
     }
   ]
 }
