@@ -1,58 +1,58 @@
 {
-  "collected": "2026-11-03",
+  "collected": "2026-11-05",
   "source": "astrocade.com homepage Next.js payload (self.__next_f)",
   "count": 5,
   "notes": "plays/likes/comments/remixes are MEASURED from the embedded payload. genre is analyst-assigned by title (Astrocade publishes no genre field); newly-seen games default to 'Unclassified' until classified.",
   "games": [
     {
-      "title": "STRAIN",
-      "creator": "phaserush5",
-      "plays": 1028931,
-      "likes": 14739,
-      "comments": 709,
-      "remixes": 0,
-      "isRemix": false,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "+1 rizz for millions",
-      "creator": "cardsharkg",
-      "plays": 700493,
-      "likes": 12916,
-      "comments": 547,
-      "remixes": 6,
-      "isRemix": false,
-      "genre": "Unclassified"
-    },
-    {
-      "title": "Shinobi Dominion",
-      "creator": "badianbanl",
-      "plays": 565374,
-      "likes": 8705,
-      "comments": 355,
-      "remixes": 5,
+      "title": "PICKAXE SWING MASTER",
+      "creator": "Leevai",
+      "plays": 1281407,
+      "likes": 26073,
+      "comments": 2407,
+      "remixes": 4,
       "isRemix": true,
       "genre": "Unclassified"
     },
     {
-      "title": "Ice River Rush",
-      "creator": "CrazyHaribo",
-      "plays": 508124,
-      "likes": 8436,
-      "comments": 304,
-      "remixes": 0,
-      "isRemix": false,
-      "genre": "Action"
-    },
-    {
-      "title": "Minecraft  prison life 2.0",
-      "creator": "astra_creator_",
-      "plays": 154665,
-      "likes": 3475,
-      "comments": 226,
+      "title": "Minecraft tnt edition 2.3",
+      "creator": "Spyro",
+      "plays": 803986,
+      "likes": 12620,
+      "comments": 373,
       "remixes": 3,
       "isRemix": true,
       "genre": "Sandbox"
+    },
+    {
+      "title": "Forge Beyond",
+      "creator": "VibeCreAI",
+      "plays": 425981,
+      "likes": 9639,
+      "comments": 978,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Frost Arrow Fishery",
+      "creator": "CrazyHaribo",
+      "plays": 253524,
+      "likes": 4190,
+      "comments": 221,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
+    },
+    {
+      "title": "Gladiator Rivals",
+      "creator": "JustJonny",
+      "plays": 52351,
+      "likes": 1023,
+      "comments": 40,
+      "remixes": 0,
+      "isRemix": false,
+      "genre": "Unclassified"
     }
   ]
 }
